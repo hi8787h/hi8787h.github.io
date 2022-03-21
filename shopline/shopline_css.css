@@ -1,0 +1,242 @@
+.h-top {
+    width: 100%;
+    background-color: black;
+    text-align: right;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    height:35px;
+
+}
+.h-top img{
+    width: 25px;
+    height :25px;
+    align-items: center;
+    display: inline-block;
+    line-height: 35px;
+}
+.h-top a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 35px;
+    padding: 0 10px;
+}
+.h-top a:hover {
+    color: blue;
+}   
+.h {
+    width: 100%;
+    height: 80px;
+    background-color: white;
+    display: flex;
+    position: fixed;
+    top: 35px;
+    left: 0;
+    height:80px;
+}
+.h .logo img{
+    width: 150px;
+    height: 28px;
+    margin: 18px 50px 18px 150px;
+}
+.h nav {
+    text-align: left;
+}
+.h nav a {
+    font-size: 15px;
+    color: black;
+    text-decoration: none;
+    display: inline-block;
+    margin: 21px 10px;
+}
+.h nav a img{
+    width: 10px;
+    height: 10px;
+    margin: auto 1px;
+    opacity: 70%;
+}
+.h nav a:hover {
+    color: #0061FF;
+}
+.h .url{
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    background-color: #0061FF;
+    border-radius: 100px;
+    text-align: center;
+    padding: 5px 17px;
+    margin: 10px 0px 10px 350px;
+
+}
+.h .url a{
+    font-size: 10px;
+    color: white;
+    text-decoration: none;
+    line-height: 30px;
+}
+
+.h a:hover{
+    opacity: 70%;
+}
+
+.main{
+    width: 100%;
+    background-color: #00142d;
+    color: white;
+    display: flex;
+    margin: auto;
+    top : 125px;
+    height :800px;
+}
+.main .text{
+    width: 696px;
+    padding: 250px 60px 14px 100px;
+    font-weight: bold;
+    line-height: 150%;
+}
+.main .text h1{
+    font-size: 40px;
+}
+.main .text .special{
+    color: #228b22;
+}
+.main .text p{
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 2em;
+    margin-bottom: 50px;
+}
+.main .text input{
+    width: 350px;
+    height: 30px;
+    color: white;
+    border: none;
+    border-bottom-style: solid;
+    background-color: #00142d;
+    margin-right: 10px;
+}
+::placeholder{
+    color: white;
+    font-size: 18px;
+}
+.main .text a{
+    display: inline-block;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    background-color: #0061FF;
+    border-radius: 100px;
+    color: white;
+    font-size: 18px;
+    margin-left: 10px;;
+}
+.main .text a:hover{
+    opacity: 70%;
+}
+.main .pic{
+    width: 600px;
+    padding: 180px 10px 10px 100px;
+}
+    .big
+    {
+        width: 100%;
+        margin :auto;
+        flex-wrap: wrap;
+    }
+    .small
+    {
+        width:  700px;
+        margin :auto;
+        padding :30px;
+        
+    }
+    .small p{
+        width:  560px;
+        margin : auto;
+        padding : 20px;
+
+        text-align: center;
+        line-height :2em;
+    }
+    .small h1
+    {
+        width: 350px;
+        margin : auto;
+        padding : 10px;
+        text-align: center;
+    }
+    .from {
+
+        width:  1300px;
+        margin :auto;
+        display: flex;
+        padding :15px;
+    }
+    .from img{
+        width : 620px;
+        padding :15px;
+
+    }
+    .from:nth-child(odd)
+    {
+    flex-direction: row-reverse;
+    }
+    .row
+    {
+        width: 650px;
+    }
+    .row p
+    {
+        line-height :2em;
+
+    }
+    ._outlist
+    {
+        display : flex;
+        text-align: left;
+    }
+    ._list
+    {   
+        width: 500px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    ._list li{
+        width: 250px;
+        margin-bottom: 10px;
+        align-items: center;
+    }
+    .twobig
+    {
+        width: 1525px;
+        margin :auto;
+        flex-wrap: wrap;
+        text-align: center;
+        background-color: #E3E4E6;
+    }
+    .twobig h1{
+        padding: 40px;
+        margin :auto;
+        text-align: center;
+        letter-spacing: 7px;
+    }
+    ._outlist2
+    {
+        width: 1400px;
+        display: flex;
+        margin: auto;
+        padding :20px;
+    }
+    ._inlist2
+    {
+        width: 310px;
+        padding :20px;
+        margin: auto;
+    }
+    ._inlist2 p
+    {
+        text-align: left;
+    }
