@@ -11,8 +11,8 @@
     <link rel = "stylesheet" href = "shopline_css.css">
 </head>
 <body>
-
-    <div class="h-top">
+<thead>
+    <div class="Navigation_Bar">
         <a href="#">
             <img src="https://ae01.alicdn.com/kf/Hc41b1fc172fd44fbab10bab839264f138.jpg">
             </a>
@@ -20,30 +20,33 @@
         <a href="#">登入網店</a>
     </div>
 
-    <div class="h">
-        <a href="#" class="logo">
-            <img src="https://img.shoplineapp.com/media/image_clips/60811bb98a60d74a03808d4d/original.png?1619073977">
+    <div class="Navigation_Bar_row2">
+        <a class="logo">
+            <h1>
+            <img src="https://img.shoplineapp.com/media/image_clips/60811bb98a60d74a03808d4d/original.png?1619073977" name="">
+            </h1>
         </a>
-        <nav>
-            <a href="#">開店服務<img src="Hw2_ShopLine/down.svg" alt=""></a>
-            <a href="#">方案費用<img src="Hw2_ShopLine/down.svg" alt=""></a>
+        <nav class="nav_list">
+            <a href="#">開店服務</a>
+            <a href="#">方案費用</a>
             <a href="#">客戶案例</a>
             <a href="#">開店說明會</a>
             <a href="#">開店諮詢</a>
-            <a href="#">更多解決方案<img src="Hw2_ShopLine/down.svg" alt=""></a>
-            <a href="#">其他資源<img src="Hw2_ShopLine/down.svg" alt=""></a>
+            <a href="#">更多解決方案</a>
+            <a href="#">其他資源</a>
         </nav>
         <div class="url">
             <a href="#">免費試用</a>
         </div>
     </div>
-
+</thead>
+<tbody>
     <div class="main">
         <div class="text">
-            <h1>想在哪開店創業？<br></h1>
+            <h1>想在哪開店創業？</h1>
             <h1 class="special">門市必備零售POS系統</h1>
             <p>超過 35 萬品牌使用！從個人賣家到國際品牌，都能以 SHOPLINE 實現全通路零售，快速拓展市場到世界各地，輕鬆開始你的『 店 』商生意！</p>
-            <input type="text" placeholder="請在此輸入點子信箱(可隨時更換)" name="" id="email">
+            <input type="email" placeholder = "請在此輸入電子信箱(可隨時更換)" id="email">
             <a href="#">免費試用</a>
         </div>
         <div class="pic">
@@ -65,14 +68,14 @@
                 <p>不會寫程式也能輕鬆架設品牌電商官網！任何產業都能找到合適的專業設計版型，以滑鼠拖曳就能完成網頁編輯，讓架設網站就像堆積木一樣簡單。</p>
                 <div class ="_outlist">
                     <ul class="_list">
-                        <li>豐富版型主題與字型搭配</li>
-                        <li>RWD 響應式網頁設計</li>
-                        <li>獨有網址 ＆ SSL 安全憑證</li>
+                        <span>✓</span><li>豐富版型主題與字型搭配</li>
+                        <span>✓</span><li>RWD 響應式網頁設計</li>
+                        <span>✓</span><li>獨有網址 ＆ SSL 安全憑證</li>
                     </ul>
                     <ul class="_list">
-                        <li>SEO 搜尋引擎優化</li>
-                        <li>一頁商店</li>
-                        <li>開放 HTML／CSS 編輯</li>
+                        <span>✓</span><li>SEO 搜尋引擎優化</li>
+                        <span>✓</span><li>一頁商店</li>
+                        <span>✓</span><li>開放 HTML／CSS 編輯</li>
                     </ul>
                 </div>
                 <a href="https://shopline.tw/online-store-setup">
@@ -88,14 +91,14 @@
                     <p>支持在地及國際金流、物流串接服務，提供海內外顧客最便利的付款及送貨服務，加速消費者完成下單交易，大幅降低購物車放棄率！</p>
                     <div class ="_outlist">
                         <ul class="_list">
-                            <li>線上信用卡刷卡</li>
-                            <li>超商代碼／條碼繳費</li>
-                            <li>超商／宅配貨到付款</li>
+                            <span>✓</span><li>線上信用卡刷卡</li>
+                            <span>✓</span><li>超商代碼／條碼繳費</li>
+                            <span>✓</span><li>超商／宅配貨到付款</li>
                         </ul>
                         <ul class="_list">
-                            <li>第三方金流／行動支付整合</li>
-                            <li>多溫層宅配並指定運費</li>
-                            <li>發票開立與串接</li>
+                            <span>✓</span><li>第三方金流／行動支付整合</li>
+                            <span>✓</span><li>多溫層宅配並指定運費</li>
+                            <span>✓</span><li>發票開立與串接</li>
                         </ul>
                     </div>
                     <a href="https://shopline.tw/features/online-store#payments-and-shipping">
@@ -111,14 +114,14 @@
                         <p>多元優惠活動、會員集客機制、網紅分潤以及直播購物等豐富功能，將電商行銷玩法一網打盡，助你成功優化行銷活動成效，刺激顧客下單、吸引鐵粉回購！</p>
                         <div class ="_outlist">
                             <ul class="_list">
-                                <li>超過 20 種優惠促銷功能</li>
-                                <li>會員分級／點數／購物金</li>
-                                <li>Instagram 購物功能</li>
+                                <span>✓</span><li>超過 20 種優惠促銷功能</li>
+                                <span>✓</span><li>會員分級／點數／購物金</li>
+                                <span>✓</span><li>Instagram 購物功能</li>
                             </ul>
                             <ul class="_list">
-                                <li>社群直播購物系統</li>
-                                <li>Facebook／Google／LINE 廣告追蹤</li>
-                                <li>Facebook／Instagram／LINE 對話式購物</li>
+                                <span>✓</span><li>社群直播購物系統</li>
+                                <span>✓</span><li>Facebook／Google／LINE 廣告追蹤</li>
+                                <span>✓</span><li>Facebook／Instagram／LINE 對話式購物</li>
                             </ul>
                         </div>
                         <a href="https://shopline.tw/features/online-store#promotion">
@@ -134,14 +137,14 @@
                             <p>不論是網店拓展門市，還是門市想發展網路生意，從商品、庫存、訂單等各項虛實店舖的資料都能完善整併，輕鬆實現全通路會員經營到多店營運。</p>
                             <div class ="_outlist">
                                 <ul class="_list">
-                                    <li>門市 POS 系統</li>
-                                    <li>門市快速集客工具</li>
-                                    <li>進銷庫存／調撥／多店管理</li>
+                                    <span>✓</span><li>門市 POS 系統</li>
+                                    <span>✓</span><li>門市快速集客工具</li>
+                                    <span>✓</span><li>進銷庫存／調撥／多店管理</li>
                                 </ul>
                                 <ul class="_list">
-                                    <li>線上線下會員／商品／庫存整合</li>
-                                    <li>O2O 即時銷售報表分析</li>
-                                    <li>串接 Shopee 蝦皮購物庫存</li>
+                                    <span>✓</span><li>線上線下會員／商品／庫存整合</li>
+                                    <span>✓</span><li>O2O 即時銷售報表分析</li>
+                                    <span>✓</span><li>串接 Shopee 蝦皮購物庫存</li>
                                 </ul>
                             </div>
                             <a href="https://shopline.tw/features/online-store#multi-channels">
@@ -150,6 +153,8 @@
                             <img src="https://img.shoplineapp.com/media/image_clips/60a4d3540289ef002f2150cb/original.png?1621414740">
                         </div>
         </div>
+</tbody>
+<tfoot>
 <div class="twobig">
     <h1>更多服務功能</h1>
         <div class="_outlist2">
@@ -168,9 +173,6 @@
                 <h3>多國語系、幣值切換</h3>
                 <p>想做跨境電商也ＯＫ！提供語言、幣別、稅金等進階功能，友善應對海外消費需求。</p>
             </div>    
-        </div>
-
-        <div class="_outlist2">
             <div class="_inlist2">
                 <img src="https://img.shoplineapp.com/media/image_clips/5f34a2e11468c4003c7aace6/original.png?1597285089">
                 <h3>專業顧問線上支援</h3>
@@ -188,6 +190,7 @@
             </div>    
         </div>
 </div>
+</tfoot>
 
 
 
