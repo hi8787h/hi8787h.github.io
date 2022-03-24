@@ -7,9 +7,10 @@
     left: 0;
     height:35px;
     display: flex;
-    align-items: center;
+    align-items: cneter;
 }
-.Navigation_Bar img{
+.language img
+{
     width: 25px;
     height :25px;
     align-items: center;
@@ -17,10 +18,14 @@
     line-height: 35px;
 }
 .Navigation_Bar a {
+    width: 50px;
+    height :25px;
     color: white;
     font-size: 12px;
     text-decoration: none;
     margin-right: 6px;
+    margin-top: 5px;
+    
 }
 .Navigation_Bar a:hover {
     color: blue;
@@ -28,7 +33,7 @@
     /*導覽欄第二欄*/
 .Navigation_Bar_row2 {
     width: 100%;
-    height: 80px;
+    height: 40px;
     background-color: white;
     display: flex;
     position: fixed;
