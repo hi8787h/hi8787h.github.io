@@ -2,13 +2,12 @@
 .Navigation_Bar{
     width: 100%;
     background-color: black;
-    text-align: right;
     position: fixed;
     top: 0px;
     left: 0;
     height:35px;
-    
-
+    display: flex;
+    align-items: center;
 }
 .Navigation_Bar img{
     width: 25px;
@@ -19,11 +18,9 @@
 }
 .Navigation_Bar a {
     color: white;
-    font-size: 18px;
+    font-size: 12px;
     text-decoration: none;
-    display: inline-block;
-    line-height: 35px;
-    padding: 0 10px;
+    margin-right: 6px;
 }
 .Navigation_Bar a:hover {
     color: blue;
@@ -36,17 +33,19 @@
     display: flex;
     position: fixed;
     top: 35px;
+    left: 0;
     height:80px;    
     align-items: center;
 }
 .Navigation_Bar_row2 .logo
 {
-    width:300px ;
+    width: 130px ;
+    margin-right: 80px;
+    margin-left : 100px;
 }
 .Navigation_Bar_row2 .logo img{
     width: 150px;
     height: 28px;
-    margin: 0px 0px 0px 100px;
 }
 .Navigation_Bar_row2 .nav_list
 {
@@ -55,10 +54,11 @@
 }
 .Navigation_Bar_row2 nav a {
     font-size: 15px;
+    width: 100px;
     color: black;
     text-decoration: none;
     display: inline-block;
-    margin: 21px 10px;
+    margin-top: 0px 5px 0px 5px;
 }
 .Navigation_Bar_row2 nav a img{
     width: 10px;
@@ -95,15 +95,21 @@
     background-color: #00142d;
     color: white;
     display: flex;
-    margin: auto;
     top : 125px;
-    height :800px;
+    margin-top: 125px;
+    height :500px;
+    justify-content : center;
+    align-items:center;
 }
 .main .text{
     width: 696px;
-    padding: 250px 60px 14px 100px;
+    margin: 100px 60px 14px 50px;
     font-weight: bold;
     line-height: 150%;
+}
+.main .pic{
+    width: 600px;
+    padding: 100px 10px 10px 100px;
 }
 .main .text h1{
     font-weight:500;
@@ -148,10 +154,7 @@
 .main .text a:hover{
     opacity: 70%;
 }
-.main .pic{
-    width: 600px;
-    padding: 180px 10px 10px 100px;
-}
+
 
     .big
     {
