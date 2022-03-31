@@ -1,0 +1,101 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.main
+{
+    width: 100%;
+    display:flex;
+    flex-direction:row;
+    flex-wrap :wrap;
+    align-content:center;
+    justify-content : center;
+    background-color: pink;
+}
+.from
+{
+    position:relative;
+    margin: 100px;
+    top:50px;
+    margin-bottom: 300px;
+    display:flex;
+    
+}
+.from:nth-child(odd)
+{
+    flex-direction: row-reverse;
+}
+.tag
+{
+    position:absolute;
+    top:-100px;
+    left:-250px;
+    width: 340px;
+    background-color: red;
+    display: flex;
+    align-content:flex-start;
+    margin: 0;
+    flex-wrap :wrap;
+}
+.tag .ver
+{
+    height: 110px;
+    writing-mode:vertical-rl;
+    align-self:center;
+    font-size:100px;
+    margin: 0px;
+    color:white;
+}
+.tag h2{
+    align-self:center;
+    font-size:48px;
+    margin: 0;
+    font-weight:400;
+    color:white;
+}
+.tag_bottom
+{
+    width: 100%;
+    height: 200px;
+    padding-left:15px;
+    padding-top: 30px;
+    padding-right: 15px;
+    letter-spacing: 4px;
+    background-color: black;
+    color:white;
+}
+.tag_bottom h3{
+    margin-bottom: 8px;
+    color: white;
+    background-color: black;
+}
+.tag_text
+{
+    background-color: #EEEEEE;
+    width: 600px;
+    position :absolute;
+    bottom: -200px;
+    left:-160px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 30px;
+    line-height:23px;
+}
+.text-title
+{
+    color:red;
+    padding-top:10px;
+    padding-bottom:10px;
+    font-size: 20px;
+}
+.tag_text li
+{
+    color: #6E6E6E;
+    font-size: 10px;
+}
+.tag_text span
+{
+    background-color: black;
+    color: white;
+    padding: 2px;
+}
