@@ -1,45 +1,56 @@
 *{
     margin: 0px;
     padding: 0px;
+    
 }
 .main
 {
     width: 100%;
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
     flex-wrap :wrap;
     align-content:center;
     justify-content : center;
-    background-color: pink;
+
 }
 .from
 {
-    position:relative;
-    margin: 100px;
-    top:50px;
+
+    margin-top:200px;
     margin-bottom: 300px;
     display:flex;
-    
+    justify-content : center;
+
+    position:relative;
 }
+
+
 .from:nth-child(odd)
 {
-    flex-direction: row-reverse;
+    
+}
+.from img
+{
+    width: 695px;
+    height: 430px;
+    z-index: 3;
 }
 .tag
 {
     position:absolute;
-    top:-100px;
-    left:-250px;
+    top:-110px;
+    left:-180px;
+
     width: 340px;
     background-color: red;
     display: flex;
     align-content:flex-start;
     margin: 0;
     flex-wrap :wrap;
+    z-index: 4;
 }
 .tag .ver
 {
-    height: 110px;
     writing-mode:vertical-rl;
     align-self:center;
     font-size:100px;
@@ -73,29 +84,83 @@
 {
     background-color: #EEEEEE;
     width: 600px;
+
     position :absolute;
-    bottom: -200px;
-    left:-160px;
+    bottom:-200px;
+    left:-100px;
+
     padding-left: 20px;
     padding-right: 20px;
     padding-bottom: 30px;
-    line-height:23px;
+    line-height:18px;
+    z-index: 4;
 }
-.text-title
+
+.tag_text p::before
+{
+    content: '▪';
+    color: #b60808;
+}
+
+.tag_text p
+{
+    color: #6E6E6E;
+    font-size: 12px;
+    padding: 10px 0px 10px 0px ;
+
+}
+.tag_text h3
 {
     color:red;
     padding-top:10px;
-    padding-bottom:10px;
-    font-size: 20px;
+    padding-bottom:20px;
+    font-size: 16px;
 }
-.tag_text li
-{
-    color: #6E6E6E;
-    font-size: 10px;
+.tag_text h3::after{
+    content: '―――――――――――――――――――――';
+    
 }
 .tag_text span
 {
     background-color: black;
     color: white;
     padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.youtube_logo
+{
+    width: 70px;
+    height: 50px;
+    background-color: #FF0000;
+    position: relative;
+
+    top:200px;
+    right:50px;
+    z-index: 5;
+}
+.youtube_logo::before
+{
+    content: '';
+    height: 0px;
+    width: 0px;
+    
+    border-top: 12px solid transparent;
+    border-right: 24px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 24px solid white;
+    position: absolute;
+    top:15px;
+    right:0px;
+}
+.graybackground
+{
+    background-color: #F5F5F5;
+    width: 60%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+
+    top:-100px;
+    right: 0px;
 }
