@@ -16,7 +16,6 @@
         header{
             display:flex;
             justify-content: center;
-            border: 1px solid #005;
 
             margin: 20px;
         }
@@ -30,13 +29,12 @@
             padding-left: 20px;
             line-height:3em; 
             font-size: 1.5em;
-            border: 1px solid #000;
         }
 
 
         footer{
             margin: 10px;
-            border: 1px solid #000;
+
         }
 
 
@@ -49,8 +47,10 @@
 
         #fave-movie img{
             border-radius: 20px;
+            width: 400px;
         }
-
+        
+        
 
     </style>
 </head>
@@ -76,13 +76,14 @@
 
         let myself = ["戴閣廷","@gmail.com","CHU"];
         
-        let interest = ["nothing","everything"];
+        let interest = ["打電腦","進擊的巨人","看新聞"];
         document.getElementById("name").innerText = " Name : " + myself[0];
 
         document.getElementById("Email").innerText = "E-mail : " + myself[1];
 
         document.getElementById("school").innerText = "學校 : " + myself[2];
-        document.getElementById("interest").innerText = "Interests : ";
+
+        document.getElementById("interest").innerText = "興趣 : ";
 
 
         interest.forEach((interests,index)=>{
