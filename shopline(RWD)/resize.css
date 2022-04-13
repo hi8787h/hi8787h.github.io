@@ -1,0 +1,477 @@
+@media screen and (max-width:768px) 
+{
+    .Navigation_Bar
+    {
+        display: none;
+        width: 100%;
+    }
+
+    .Navigation_Bar_row2 
+    {
+        top:0;
+    }
+
+    .Navigation_Bar_row2 .freebutton
+    {
+        display: none;
+    }
+    .main_screen:nth-child(odd)
+    {
+        flex-direction: column-reverse;
+    }
+    .main-nav .freebutton
+    {
+        display: block;
+    }
+
+    .startup_text
+    {
+        text-align: center;
+        width: calc(100% - 40px);
+        --startup_text_padding_left:0px;
+        --startup_text_padding-top:50px;
+        padding-bottom: 50px;
+
+        margin-left: 20px;
+        margin-right: 20px;
+
+    }
+    .startup_text h2
+    {
+        font-size: 30px;
+        letter-spacing: 2px;
+    }
+    .startup_text p 
+    {
+        font-size: 18px;
+        line-height: 26px;
+        text-align: left;
+    }
+    .startup_text input
+    {
+        margin-bottom: 20px;
+        font-size: 20px;
+        width: calc(100% - 40px);
+    }
+    .startup_text .freebutton
+    {
+        display: block;
+        width: calc(100% - 40px);
+    }
+    .shoplinelog
+    {
+        width: 30%;
+    }
+    .startupimg
+    {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    .startupimg img
+    {
+        width: 100%;
+    }
+    .navlist
+    {
+        display: none;
+    }
+
+    .menubutton
+    {
+        width: 40px;
+        height: 40px;
+        background-color: #f00;
+        margin-right: 50px;
+
+    }
+
+    .one_plantfrom h2
+    {
+        font-size: 30px;
+        line-height: 40px;
+        font-weight: 500;
+    }
+    .one_plantfrom p
+    {
+        font-size: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .row
+    {
+        margin-left: 20px;
+        margin-right: 20px;
+        width: calc(100% - 40px);
+
+    }
+    .row h2
+    {
+        font-size: 32px;
+    }
+    .row p
+    {
+        font-size: 18px;
+        color :#324255;
+        line-height: 34px;
+    }
+    .from:nth-child(even) .row
+    {
+        width: calc(100% - 40px);
+        margin-left: 15px;
+    }
+    .rowlist{
+        width:100%;
+    }
+    ._list
+    {
+        width:100%;
+    }
+
+    ._list li
+    {
+        width: calc( 100% - 50px);
+        font-size: 18px;
+    }
+    .ulist img{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .tryday .textcontent
+    {
+        width: 100%;
+    }
+    .tryday_img
+    {
+        width: 100%;
+        height: 400px;
+    }
+    .tryday_img img{
+        width: 100%;
+    }
+}
+@media screen and (max-width:992px)  
+{
+    .Navigation_Bar
+    {
+        display: none;
+        width: 100%;
+    }
+
+    .Navigation_Bar_row2 
+    {
+        top:0;
+    }
+
+    .Navigation_Bar_row2 .freebutton
+    {
+        display: none;
+    }
+    .main_screen:nth-child(odd)
+    {
+        flex-direction: column-reverse;
+    }
+    .main-nav .freebutton
+    {
+        display: block;
+    }
+
+    .startup_text
+    {
+        text-align: center;
+        width: calc(100% - 40px);
+        --startup_text_padding_left:0px;
+        --startup_text_padding-top:50px;
+        padding-bottom: 50px;
+
+        margin-left: 20px;
+        margin-right: 20px;
+
+    }
+    .startup_text h2
+    {
+        font-size: 30px;
+        letter-spacing: 2px;
+    }
+    .startup_text p 
+    {
+        font-size: 18px;
+        line-height: 26px;
+        text-align: left;
+    }
+    .startup_text input
+    {
+        margin-bottom: 20px;
+        font-size: 20px;
+        width: calc(100% - 40px);
+    }
+    .startup_text .freebutton
+    {
+        display: block;
+        width: calc(100% - 40px);
+    }
+    .shoplinelog
+    {
+        width: 30%;
+    }
+    .startupimg
+    {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    .startupimg img
+    {
+        width: 100%;
+    }
+    .navlist
+    {
+        display: none;
+    }
+
+    .menubutton
+    {
+        width: 40px;
+        height: 40px;
+        background-color: #f00;
+        margin-right: 50px;
+
+    }
+
+    .one_plantfrom h2
+    {
+        font-size: 30px;
+        line-height: 40px;
+        font-weight: 500;
+    }
+    .one_plantfrom p
+    {
+        font-size: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .row
+    {
+        margin-left: 20px;
+        margin-right: 20px;
+        width: calc(100% - 40px);
+
+    }
+    .row h2
+    {
+        font-size: 32px;
+    }
+    .row p
+    {
+        font-size: 18px;
+        color :#324255;
+        line-height: 34px;
+    }
+    .from:nth-child(even) .row
+    {
+        width: calc(100% - 40px);
+        margin-left: 15px;
+    }
+    .rowlist{
+        width:100%;
+    }
+    ._list
+    {
+        width:100%;
+    }
+
+    ._list li
+    {
+        width: calc( 100% - 50px);
+        font-size: 18px;
+    }
+    .ulist img{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .tryday .textcontent
+    {
+        width: 100%;
+    }
+    .tryday_img
+    {
+        width: 100%;
+        height: 400px;
+    }
+    .tryday_img img{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width:1024px) 
+{
+    .Navigation_Bar
+    {
+        display: none;
+        width: 100%;
+    }
+
+    .Navigation_Bar_row2 
+    {
+        top:0;
+    }
+
+    .Navigation_Bar_row2 .freebutton
+    {
+        display: none;
+    }
+    .main_screen:nth-child(odd)
+    {
+        flex-direction: row;
+    }
+    .main-nav .freebutton
+    {
+        display: block;
+    }
+
+    .startup_text
+    {
+        text-align: center;
+        width: calc(100% - 40px);
+
+        --startup_text_padding_left:0px;
+        --startup_text_padding-top:50px;
+        padding-bottom: 50px;
+        padding-top: 150px;
+        margin-left: 20px;
+        margin-right: 20px;
+        text-align: left;
+
+    }
+    .startup_text h2
+    {
+        font-size: 30px;
+        letter-spacing: 2px;
+        padding-bottom: 30px;
+    }
+    .startup_text p 
+    {
+        font-size: 18px;
+        line-height: 26px;
+        text-align: left;
+        padding-bottom: 30px;
+    }
+    .startup_text input
+    {
+        margin-bottom: 20px;
+        font-size: 20px;
+        width: 40%;
+    }
+    .startup_text .freebutton
+    {
+        width: 90px;
+        display: inline-block;
+    }
+    .shoplinelog
+    {
+        width: 30%;
+    }
+    .startupimg
+    {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+    .startupimg img
+    {
+        width: 100%;
+    }
+    .navlist
+    {
+        display: none;
+    }
+
+    .menubutton
+    {
+        width: 40px;
+        height: 40px;
+        background-color: #f00;
+        margin-right: 50px;
+
+    }
+
+    .one_plantfrom h2
+    {
+        font-size: 30px;
+        line-height: 40px;
+        font-weight: 500;
+    }
+    .one_plantfrom p
+    {
+        font-size: 20px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    .row
+    {
+        margin-left: 20px;
+        margin-right: 20px;
+        width: calc(100% - 40px);
+
+    }
+    .row h2
+    {
+        font-size: 32px;
+    }
+    .row p
+    {
+        font-size: 18px;
+        color :#324255;
+        line-height: 34px;
+    }
+    .from:nth-child(even) .row
+    {
+        width: calc(100% - 40px);
+        margin-left: 15px;
+    }
+    .rowlist{
+        width:100%;
+    }
+    .form_image {
+        width: 100%;
+    }
+    .from:nth-child(even) .form_image
+    {
+        width: 100%;
+    }
+    ._list
+    {
+        width: calc( 100% - 24px);
+        justify-content: center;
+    }
+
+    ._list li
+    {
+        width: calc( 50% - 24px - 25px);
+        font-size: 18px;
+    }
+    .ulist img{
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .tryday .textcontent
+    {
+        width: 100%;
+    }
+    .tryday_img
+    {
+        width: 100%;
+        height: 400px;
+    }
+    .tryday_img img{
+        width: 100%;
+    }
+    .tryday .textcontent
+    {
+        padding: 20px;
+        display: block;
+    }
+}

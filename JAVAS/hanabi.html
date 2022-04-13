@@ -7,36 +7,37 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-        body{
+        .all
+        {
             width: 80%;
+            border: 2px solid #005; 
+            flex-direction:row;
             margin: auto;
-            border: 2px solid #005;
+            height: 700px;
         }
         
-        header{
+        .header{
             display:flex;
+            justify-content : center;
+            width: 100%;
+        }
+
+        .body_class
+        {
+            width: 100%;
+            height: 200px;
+            border:1px red solid;
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction:column;
+
             justify-content: center;
+            align-items:center;
+            margin-bottom: 40px;
+            margin-top: 40px;
 
-            margin: 20px;
+            font-size:26px;
         }
-
-        header img{
-            width: 20%;
-        }
-
-        main{
-            margin: 10px;
-            padding-left: 20px;
-            line-height:3em; 
-            font-size: 1.5em;
-        }
-
-
-        footer{
-            margin: 10px;
-
-        }
-
 
         #fave-movie{
             display: flex;
@@ -46,7 +47,7 @@
 
 
         #fave-movie img{
-            border-radius: 20px;
+            border-radius: 30px;
             width: 400px;
         }
         
@@ -56,18 +57,19 @@
 </head>
 <body>
 
-
-    <header>
+<section class="all">
+    <div class="header">
         <img src="https://picsum.photos/300/200/?random=10">
-    </header>
+    </div>
 
 
-    <main>
+
+    <div class="body_class">
         <div id="name"></div>
         <div id="Email"></div>
         <div id="school"></div>
         <div id="interest"></div>
-    </main>
+    </div>
 
 
     <script type="text/javascript">
@@ -109,5 +111,6 @@
         document.write(`</footer>`);
 
     </script>
+    </section>
 </body>
 </html>
