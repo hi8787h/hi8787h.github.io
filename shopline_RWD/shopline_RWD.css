@@ -74,7 +74,7 @@
 .navlist
 {
     flex-grow:0.7;
-    width: 700px;
+    width: 500px;
 }
 .main-nav
 {
@@ -506,7 +506,8 @@
 
     background-color:rgb(10, 10, 68);
 }
-.tryday .textcontent{
+.tryday .textcontent
+{
     padding: 40px 40px 0px 40px;
     width: calc(50% - 120px);
     color: white;
@@ -517,7 +518,9 @@
     text-align: start;
 
 }
-
+.text h2{
+    padding-bottom: 50px;
+}
 .tryday_img
 {
     width: 50%;
