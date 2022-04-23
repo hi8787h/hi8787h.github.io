@@ -20,10 +20,10 @@
 
     </div>
 
-    
     <script>
         let container;
-
+        let i=2; // [下一隻要加的圖編號]
+        
         window.onload =function ()
         {
             container =document.getElementById("container");
@@ -53,24 +53,24 @@
         // 載入所有寶可夢
         function allPokemon()
         {
-            for(let i=2 ; i <898 ;i++)
+            //補清空
+            container.innerHTML="";
+            i=1;
+            for( ;i<898;i++)
             {
-                let filename=i.toString().padStart(3,"0");
-                let pathFile=`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${filename}.png`;
-
-                let img = document.createElement("img");
-                img.setAttribute("src",pathFile);
-
-            
-
-                img.addEventListener("click",function(event){
-                    container.removeChild(event.target);
-                });
-
-                container.append(img);
+                AddOneImg()
             }
         }
-
+        function AddOneImg()
+        {
+            if (i> MAX)
+            {
+                alert('加滿了');
+                return;
+            }
+            AddOneImg();
+            i++;
+        }
         function removePokemon()
         {
             container.removeChild(container.lastChild);

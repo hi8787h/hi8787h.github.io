@@ -79,6 +79,7 @@
         let myself = ["戴閣廷","@gmail.com","CHU"];
         
         let interest = ["打電腦","進擊的巨人","看新聞"];
+        
         document.getElementById("name").innerText = " Name : " + myself[0];
 
         document.getElementById("Email").innerText = "E-mail : " + myself[1];
@@ -87,7 +88,7 @@
 
         document.getElementById("interest").innerText = "興趣 : ";
 
-
+        console.log()
         interest.forEach((interests,index)=>{
             if(index==interest.length - 1){
                 document.getElementById("interest").innerText += " " + interests;
