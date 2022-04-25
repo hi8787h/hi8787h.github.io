@@ -51,8 +51,15 @@
             width: 400px;
         }
         
-        
-
+        .favorite_img{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+        }
+        .favorite_img img{
+            max-width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -105,12 +112,12 @@
 
 
 
-        document.write(`<footer id="fave-movie">`);
+        document.write(`<footer id="fave-movie" class="favorite_img">`);
         imageArr.forEach((url, index)=>{
             document.write(`<img src = ${url}>`);
         });
         document.write(`</footer>`);
-
+        document.write(`564654564`);
     </script>
     </section>
 </body>

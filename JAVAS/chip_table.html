@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <canvas id="mkShare"></canvas>
+    <table class="table table-bordered table-striped  table-dark" id="chip_table">
+
+    </table>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.js"
+        integrity="sha512-G8JE1Xbr0egZE5gNGyUm1fF764iHVfRXshIoUWCTPAbKkkItp/6qal5YAHXrxEu4HNfPTQs6HOu3D5vCGS1j3w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--以上是從Chart.js 複製上去的 最後的 Copy Script Tag-->
+    <script>
+        const marketingShare = 
+        {
+            Title:["排名","公司","國別","市佔率"],
+            data:[
+            { Ranking: 1, Name: "台積電", Country: "台灣", Ratio: 53.1 },
+                { Ranking: 2, Name: "三星電子", Country: "韓國", Ratio: 17.3 },
+                { Ranking: 3, Name: "聯電", Country: "台灣", Ratio: 7.2 },
+                { Ranking: 4, Name: "格羅方德", Country: "美國", Ratio: 6.1 },
+                { Ranking: 5, Name: "中芯國際", Country: "中國", Ratio: 5.3 },
+                { Ranking: 6, Name: "華虹半導體", Country: "中國", Ratio: 2.6 },
+                { Ranking: 7, Name: "力積電", Country: "台灣", Ratio: 1.8 },
+                { Ranking: 8, Name: "世界先進", Country: "台灣", Ratio: 1.4 },
+                { Ranking: 9, Name: "高塔半導體", Country: "以色列", Ratio: 1.4 },
+                { Ranking: 10, Name: "東部高科", Country: "南韓", Ratio: 1 }
+            ]
+        }
+
+
+
+        let companies = [] , data = [];
+      //  let companies = ["台積電", "三星電子", "聯電", "格羅方德", "中芯國際", "華虹半導體","力積電", "世界先進", "高塔半導體", "東部高科"];
+       // let data = [53.1, 17.3, 7.2, 6.1, 5.3, 2.6, 1.8,  1.4, 1.4, 1 ];
+
+        window.onload = function () {
+            /*
+            marketingShare.data.forEach(company => {
+                companies.push(company.Name);
+                data.push(company.Ratio);
+            });
+            */
+            for(var index in marketingShare.data)
+            {
+                companies[index] = marketingShare.data[index].Name;
+                data[index] = marketingShare.data[index].Ratio;
+            }
+            drawPieChart(companies,data);
+        }
+    </script>
+
+    <script>
+        //第一個參數為公司陣列, 第二個參數為資料陣列
+        function drawPieChart(companyArray,dataArray) 
+        {
+            //Pie Chart圓餅圖
+            let ctxPie = document.getElementById("mkShare");
+
+            //  Chart.js 裡面有很多圖表 , 可以用在js上
+            // https://www.chartjs.org/docs/latest/
+            var pieChart = new Chart(ctxPie, {
+                type: 'pie',
+                data: {
+                    //hot code ,javascript 是用來做動態
+                    labels: ["台積電", "三星電子", "聯電", "格羅方德", "中芯國際", "華虹半導體","力積電", "世界先進", "高塔半導體", "東部高科"],
+                    datasets: [{
+                        data: [53.1, 17.3, 7.2, 6.1, 5.3, 2.6, 1.8,  1.4, 1.4, 1 ],
+                        backgroundColor: [
+                            'rgb(255, 99, 132)',
+                            'rgb(255,75,50)',
+                            'rgb(255, 205, 86)',
+                            'rgb(75, 192, 192)',
+                            'rgb(54, 162, 235)',
+                            'rgb(153, 102, 255)',
+                            'rgb(201, 203, 207)',
+                            'rgb(255, 138, 64)',
+                            'rgb(142, 65, 64)',
+                            'rgb(59, 72, 64)'
+                        ]
+                    }],
+                },
+                options: {
+                    responsive: true,
+                    title: {
+                        display: true,
+                        fontSize: 26,
+                        text: '2021年全球晶圓代工市佔率%'
+                    },
+                    tooltips: {
+                        mode: 'point',
+                        intersect: true,
+                    },
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                            fontColor: 'black',
+                        }
+                    }
+                }
+            });
+        }
+        top3 = marketingShare.data.filter(x=>x.Ratio>7 && x.Country === "台灣" )
+
+        let rank =[1,2,3,4,5,6,7,8,9,10]
+        let factory = ["台積電", "三星電子", "聯電", "格羅方德", "中芯國際", "華虹半導體","力積電", "世界先進", "高塔半導體", "東部高科"];
+        let fa_country = ["台灣","韓國","台灣","美國","中國","中國","台灣","台灣","以色列","韓國"];
+        let ratio = [53.1, 17.3, 7.2, 6.1, 5.3, 2.6, 1.8,  1.4, 1.4, 1 ];
+
+        let thead_fa = ["排名" , "公司名稱" , "國別" , "市佔率"]
+
+
+        let GlobalCountry2={
+            thead_fa : ["排名" , "公司名稱" , "國別" , "市佔率"],
+            Country:[
+                {rank:1,factory:"台積電",fa_country:"台灣",ratio:53.1},
+                {rank:2,factory:"三星電子",fa_country:"韓國",ratio:17.3},
+                {rank:3,factory:"聯電",fa_country:"台灣",ratio:7.2},
+                {rank:4,factory:"格羅方德",fa_country:"美國",ratio:6.1},
+                {rank:5,factory:"中芯國際",fa_country:"中國",ratio:5.3},
+                {rank:6,factory:"華虹半導體",fa_country:"中國",ratio:2.6},
+                {rank:7,factory:"力積電",fa_country:"台灣",ratio:1.8},
+                {rank:8,factory:"世界先進",fa_country:"台灣",ratio:1.4},
+                {rank:9,factory:"高塔半導體",fa_country:"以色列",ratio:1.4},
+                {rank:10,factory:"東部高科",fa_country:"韓國",ratio:1},
+            ]
+        }
+        window.onload = function () 
+        {
+            let table = document.getElementById("chip_table");
+            let thead , tbody ;
+
+            thead = document.createElement('thead');
+            tbody = document.createElement('tbody');
+
+            let theadTR = document.createElement("tr");
+
+            thead_fa.forEach((theads, index) => 
+            {
+                let th = document.createElement("th");
+                th.innerText = theads;
+                theadTR.append(th);
+            });
+
+            //依序插入工廠名稱 到th 裡面
+
+            
+
+
+            
+
+            thead.append(theadTR);
+            table.append(thead);
+            tbody.append();
+            drawPieChart();
+            //SimpleTbody();
+
+        }
+        function CreateTbody() {
+            rank.forEach(country => {
+                //(1)
+                let tr = document.createElement("tr");
+                //(2)建立td,設定資料,td加入tr
+                rank.forEach(item => {
+                    let td = document.createElement("td");
+                    td.innerText = item;
+
+                    tr.append(td);
+                });
+
+                tbody.append(tr);
+                table.append(tbody);
+            });
+        }
+
+    </script>
+
+</body>
+
+</html>
