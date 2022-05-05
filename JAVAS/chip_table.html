@@ -113,17 +113,14 @@
         }
         top3 = marketingShare.data.filter(x=>x.Ratio>7 && x.Country === "台灣" )
 
-        let rank =[1,2,3,4,5,6,7,8,9,10]
-        let factory = ["台積電", "三星電子", "聯電", "格羅方德", "中芯國際", "華虹半導體","力積電", "世界先進", "高塔半導體", "東部高科"];
-        let fa_country = ["台灣","韓國","台灣","美國","中國","中國","台灣","台灣","以色列","韓國"];
-        let ratio = [53.1, 17.3, 7.2, 6.1, 5.3, 2.6, 1.8,  1.4, 1.4, 1 ];
+      //  let rank =[1,2,3,4,5,6,7,8,9,10]
+      //  let factory = ["台積電", "三星電子", "聯電", "格羅方德", "中芯國際", "華虹半導體","力積電", "世界先進", "高塔半導體", "東部高科"];
+      //  let fa_country = ["台灣","韓國","台灣","美國","中國","中國","台灣","台灣","以色列","韓國"];
+      //  let ratio = [53.1, 17.3, 7.2, 6.1, 5.3, 2.6, 1.8,  1.4, 1.4, 1 ];
 
-        let thead_fa = ["排名" , "公司名稱" , "國別" , "市佔率"]
+        let thead_title = ["排名" , "公司名稱" , "國別" , "市佔率"]
 
-
-        let GlobalCountry2={
-            thead_fa : ["排名" , "公司名稱" , "國別" , "市佔率"],
-            Country:[
+            let Country=[
                 {rank:1,factory:"台積電",fa_country:"台灣",ratio:53.1},
                 {rank:2,factory:"三星電子",fa_country:"韓國",ratio:17.3},
                 {rank:3,factory:"聯電",fa_country:"台灣",ratio:7.2},
@@ -135,54 +132,72 @@
                 {rank:9,factory:"高塔半導體",fa_country:"以色列",ratio:1.4},
                 {rank:10,factory:"東部高科",fa_country:"韓國",ratio:1},
             ]
-        }
+        
+
+        let table = document.getElementById("chip_table");
+        let thead , tbody ;
+
+        thead = document.createElement('thead');
+        tbody = document.createElement('tbody');
+
         window.onload = function () 
-        {
-            let table = document.getElementById("chip_table");
-            let thead , tbody ;
+        {     
 
-            thead = document.createElement('thead');
-            tbody = document.createElement('tbody');
+            table.append(thead);
+            table.append(tbody);
+            tbody.append();
+            drawPieChart();
+            createThead();
+            SimpleTbody();
+            //CreateTbody();
+            //SimpleTbody();
 
+        }
+
+        function createThead()
+        {   
             let theadTR = document.createElement("tr");
-
-            thead_fa.forEach((theads, index) => 
+            //forEach 適用於 Array , theads (element) 代表 array 裡面 從index[0]開始 的element
+            thead_title.forEach((theads, index) => 
             {
                 let th = document.createElement("th");
                 th.innerText = theads;
                 theadTR.append(th);
             });
+            thead.append(theadTR);
 
             //依序插入工廠名稱 到th 裡面
-
-            
-
-
-            
-
-            thead.append(theadTR);
-            table.append(thead);
-            tbody.append();
-            drawPieChart();
-            //SimpleTbody();
-
         }
-        function CreateTbody() {
-            rank.forEach(country => {
-                //(1)
-                let tr = document.createElement("tr");
-                //(2)建立td,設定資料,td加入tr
-                rank.forEach(item => {
+
+        function SimpleTbody() 
+        {   
+            Country.forEach((element,index)=>
+            {
+                let rank = element.rank;
+                let factory = element.factory;
+                let fa_country =element.fa_country;
+                let ratio  = element.ratio;
+                
+                let tbodyTR =document.createElement("tr");
+                let tbody_td=[rank,factory,fa_country,ratio]
+                
+                tbody_td.forEach(tbodys=>
+                {
                     let td = document.createElement("td");
-                    td.innerText = item;
-
-                    tr.append(td);
+                    td.innerText = tbodys;
+                    tbodyTR.append(td);
                 });
-
-                tbody.append(tr);
-                table.append(tbody);
+                tbody.append(tbodyTR);
             });
+
         }
+
+
+        function createTable()
+        {
+            
+        }   
+
 
     </script>
 

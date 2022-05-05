@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <div class="container">
+        <div class="border border-dark"> 
+            <div class="row">
+                <div class="col-4">
+                    <button id="restart" class="btn-primary">RE</button>
+                    <button id="peek" class="btn-warning">偷看</button>
+
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">猜</button>
+                    </div>
+                    
+                </div>
+                <div class="col-6">
+                    各位數字範圍:<span></span>
+                    <ul id="guess-history" class="list-group">
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module">
+        import { $g , $c , $a } from "./common.js" 
+
+        //準備全域 UI , DATA
+        const btn_restart = $g ("#restart")
+        const btn_peek = $g ("#peek")
+        const input_guess = $g ("#guess")
+        const btn_submit = $g ("#submit")
+        const ul_guessHistory = $g ("#guess-history")
+
+        const min=1 , max = 9
+        let ans =[];
+
+        //-----準備工作
+        window.onload =()=>
+        {
+            btn_restart.addEventListener('click',restart)
+            btn_peek.addEventListener('click',peek)
+            btn_submit.addEventListener('click',submit)
+        
+
+        //$g('span').innerText = `${min} ${max}`
+        ul_guessHistory.previosElementSibling.innerText= `${min} ~ ${max}`
+
+        //重新開始 也是開始的一步驟
+
+        restart()
+        }
+
+        function restart()
+        {
+            produceAnswer();
+
+            //清空 輸入框 猜案史
+            input_guess.value=""
+            ul_guessHistory.innerText=""
+            btn_submit.removeAtrribute("disabled")
+        }
+        function peek(){
+            alert( ans )
+        }
+
+        function submit()
+        {
+            let guess = input.value
+            .split('')
+            .map(c => parseInt(c))
+
+        console.log(guess)
+        
+        //(一) 防呆
+        //長度非4
+        //去重複後長度非4
+        //值非數字 parseInt()
+        
+        if(guess.length !=4
+        ||   new Set(guess).size != 4
+        ||   guess.some(x=> c<min || c > max))
+        {
+            alert('請輸入 範圍內 四碼 不重複 數字')
+            return ;
+        }
+
+        //(二)計算aAbB
+        //法一,直觀寫法
+        let a = ans.filter((n,index)=>index == guess.indexOf(n)).length
+
+        let b = ans.filter
+        ((n,index) => index == guess.indexOf(n)
+                            && guess.indexOf(n) != -1
+        ).length
+
+        //法二, 交集
+        //我裡面的數字 , 他也有
+        let intersect = guess.filter ( n=> guess.indexOf(n) != -1)
+        // 同上
+        b = intersect.length - a
+
+        console.log(a)
+        console.log(b)
+
+        //(三) 更新UI
+
+        let li = $c('li')
+        $a(ul_guessHistory , li )
+        li.innnerText = `${a}A${b}B`
+        li.setAtrribute("class","list-group-item")
+
+        let btnGroup =  $c('div') 
+            $a( li , btnGroup)
+            btnGroup.setAtrribute("class","btn-group")
+
+        //左
+        let left_group = $c('button')
+        $a (btnGroup ,left_guess)
+        left_guess.setAtrribute("class","btn-dark")
+        left_group.innerText = input_guess.value
+
+        //右
+        let right_check = $c('button')
+        $a (btnGroup ,right_guess)
+        right_check.setAtrribute("class","btn-danger")
+        right_check.innerText = `${a}A${b}B`
+
+        //(四)檢查勝敗
+        if (a==4)
+        {
+            alert("猜中了")
+            right_check.classList.remove("btn-danger")
+            right_check.classList.add("btn-success")
+
+            //獲勝後 無法互動
+            btn_submit.setAtrribute("disabled","disabled")
+            // 類似 C# Enable = true / false
+        }
+
+        // 最後 清空輸入
+        input_guess.value = ""
+        }
+
+        function produceAnswer()
+        {
+            //{1,2,3,....}
+            let candidates = new Array (max - min + 1) //幾格陣列
+                .fill(0)
+                .map((x , index)=> min + index)
+
+            //法一 , 洗牌
+            //sort 的數值 代表 a 相對於b 的大小 //-0.5 ~ 0.5
+            ans = candidates
+                .sort((a,b)=> {Math.random() - 0.5})
+                .slice( 0 , 4 ) //取index 值 0~ < 4 , 拷貝一份回傳
+
+            //法二 抽排
+            for(let i = 0 ; i < 4 ;i++)
+            {
+                let idx = Math.floor(
+                    Math.random() * candidates.length
+                ) // 陣列長度裡 隨機挑選一個index 值
+            }
+
+            // 一增
+            ans[i] = candidates[idx]
+
+            //一刪
+            candidates.splice(idx , 1) //開始索引 , 幾個
+
+            console.log(candidates)
+        }
+
+    </script>
+
+</body>
+</html>
