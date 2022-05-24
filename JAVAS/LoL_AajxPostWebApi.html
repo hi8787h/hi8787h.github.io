@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+</head>
+<body>
+    <div class="jumbotron">
+        <h1> Ajax - Post</h1>
+        <h2>Include - xhr, fecth, jQuery</h2>
+    </div>
+
+    <button id="btnXhr" class="btn btn-primary" disabled>XHR</button>
+    <button id="btnFetch" class="btn btn-warning" disabled>Fetch(AutoMapper)</button>
+    <button id="btnJquery" class="btn btn-info" disabled>jQuery</button>
+    <button id="btnReset" class="btn btn-danger" disabled>Reset</button>
+
+    <hr />
+    <div id="msg"></div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+
+    <script>
+        const lolUrl = "https://ddragon.leagueoflegends.com/cdn/10.22.1/data/zh_TW/champion.json";
+        const pokemonUrl = "https://raw.githubusercontent.com/apprunner/pokemon.json/master/pokedex.json";
+
+
+        let btnXhr, btnFetch, btnJquery, btnReset, msg;
+
+        window.onload = function () {
+            msg = document.getElementById("msg");
+
+            btnXhr = document.getElementById("btnXhr");
+            btnFetch = document.getElementById("btnFetch");
+            btnJquery = document.getElementById("btnJquery");
+            btnReset = document.getElementById("btnReset");
+
+            btnXhr.addEventListener("click", xhrPost);
+            btnFetch.addEventListener("click", fetchPost);
+            btnJquery.addEventListener("click", jqueryPost);
+
+            btnReset.addEventListener("click", Reset);
+
+            //戴入LoL - champion.json
+            loadChampionData();
+        }
+
+        let championObject = {}, heros = {};
+
+        let xhr = new XMLHttpRequest();
+        function xhrPost() {
+            xhr.onload = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    msg.innerText = xhr.responseText;
+                }
+                else {
+                    msg.innerText = `發生錯誤: ${xhr.status}, ${xhr.statusText}`;
+                }
+            }
+
+            xhr.open("POST", "https://localhost:44325/api/lol");
+            xhr.setRequestHeader('Content-type', 'application/json; charset=utf-8');
+            xhr.send(JSON.stringify(championsArray));
+        }
+
+        function fetchPost() {
+            const apiUrl = "https://localhost:44325/api/lol/automapper";
+            let request = new Request(apiUrl, {
+                method: "POST",
+                headers: {
+                    "Content-type": "application/json; charset=UTF-8"
+                },
+                body: JSON.stringify(championsArray),
+
+            });
+
+            fetch(request)
+                .then(response => {
+                    //檢查response是否ok ?
+                    if (response.ok) {
+                        return response.text();
+                    } else {
+                        throw new Error(`發生錯誤: ${response.status}, ${response.statusText}`);
+                    }
+                })
+                .then(result => {
+                    msg.innerText = result;
+                })
+                .catch(ex => {
+                    msg.innerText = ex;
+                })
+                .finally();
+        }
+
+        function jqueryPost() {
+            //寫法一
+            /*
+            $.ajax({
+                url: "https://localhost:44325/api/lol",
+                method: "POST", // > 1.9, Default預設為GET
+                //type: "POST",  // < 1.9
+                data: JSON.stringify(championsArray),
+                contentType: "application/json;charset=UTF-8",  //從前端傳送給後端的資料MIME Type, GET方法呼叫時不可加這個
+                dataType: "json",   //期望從Server傳回來的資料型別text或json
+                success: function (response) {
+                    msg.innerText = `${response.statusCode}, ${response.message}`;
+                },
+                error: function (ex) {
+                    msg.innerText = `發生錯誤, ${ex.status}, ${ex.statusText}, ${ex.responseText} `;
+                }
+            });
+            */
+
+            //寫法二
+            
+            var jqXhr = $.ajax({
+                url: "https://localhost:44325/api/lol",
+                method: "POST", // > 1.9, Default預設為GET
+                //type: "POST",  // < 1.9
+                data: JSON.stringify(championsArray),
+                contentType: "application/json;charset=UTF-8",  //從前端傳送給後端的資料MIME Type, GET方法呼叫時不可加這個
+                dataType: "json",   //期望從Server傳回來的資料型別text或json
+                })
+                .done(function (response) {
+                    msg.innerText = `${response.statusCode}, ${response.message}`;
+                })
+                .fail(function (ex) {
+                    msg.innerText = `發生錯誤, ${ex.status}, ${ex.statusText}, ${ex.responseText} `;
+                })
+                .always(function () {
+
+                });
+                
+        }
+
+
+        function Reset() {
+            msg.innerHTML = "";
+        }
+
+        //載入champion.json
+        function loadChampionData() {
+            fetch(lolUrl)
+                .then(response => {
+                    //檢查response是否ok ?
+                    if (response.ok) {
+                        return response.text();
+                    } else {
+                        throw new Error(`發生錯誤: ${response.status}, ${response.statusText}`);
+                    }
+                })
+                .then(result => {
+                    championObject = JSON.parse(result);
+                    heros = championObject.data;
+                    msg.append(JSON.stringify(heros));
+
+                    TransformData(heros); //轉換資料格式
+
+                    btnXhr.disabled = false;
+                    btnFetch.disabled = false;
+                    btnJquery.disabled = false;
+                    btnReset.disabled = false;
+                })
+                .catch(ex => {
+                    console.log(ex);
+                });
+        }
+
+
+        let championsArray = [];    
+        //傳入hero object並抽取出特定欄位資料, 轉換成championsArray
+        function TransformData(herosObject) {
+            //載入所有的Champions英雄卡片資料
+            //顯示Object物件所有Properties名稱(取得英雄的名稱)
+            var namesArray = Object.keys(herosObject);
+
+            namesArray.forEach((item) => {
+                var tempObject = {
+                    Id: item,
+                    Key: herosObject[item].key,
+                    Chinese: herosObject[item].name,
+                    Hp: herosObject[item].stats.hp,
+                    Movespeed: herosObject[item].stats.movespeed,
+                    Armor: herosObject[item].stats.armor,
+                    Spellblock: herosObject[item].stats.spellblock,
+                    Attackrange: herosObject[item].stats.attackrange,
+                };
+
+                championsArray.push(tempObject);
+            });
+
+            /*
+            const promise1 = new Promise(function (resolve, reject) {
+                resolve(championsArray);
+            });
+
+
+            promise1
+                .then(result => {
+                    console.log(result.map(x=>x));  //複製出一個新的陣列作顯示, 以避免資料被下一步的排序干擾
+                    return result;
+                })
+                .then(result => {
+                    championsArray = result.sort(function (a, b) {
+                        return a.Key.toString().padStart(3, "0") > b.Key.toString().padStart(3, "0") ? 1 : -1;
+                    });
+
+                    console.log(result);
+                })
+            */
+
+            console.log(championsArray.map(x=>x));  //複製出一個新的陣列作顯示, 以避免資料被下一步的排序干擾
+
+            //以key作排序
+            championsArray = championsArray.sort(function (a, b) {
+                return a.Key.toString().padStart(3, "0") > b.Key.toString().padStart(3, "0") ? 1 : -1;
+            });
+
+            console.log(championsArray);
+            
+        }
+ 
+  
+    </script>
+</body>
+</html>

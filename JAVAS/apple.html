@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+</head>
+<body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    
+    <main>
+        <div class="container">
+            <div class="d-flex justify-content-between">
+                <h2>iPad</h2>
+                <p>金額:$ <span id="total">{1}</span>元</p>
+            </div>
+            <div class="row"><!---手機一欄平板兩欄-->
+                <div class="main-pic col-12 col-md-6 col-md-6">
+                    <img src="" alt="{圖檔路徑}">
+                </div>
+                <ul class="main-specs col-12 col-md-6"><!---每一組清單ul-->
+                    {各組規格}
+                </ul>
+            </div>
+        </div>
+    </main>
+
+    <script>
+
+        //靜態UI取到
+        const span_price = document.querySelector('#total');
+        const _img = document.querySelector('.main-pic img');
+        const ul_specs = document.querySelector('.main-specs');
+        //規格 : specia
+
+        //全域
+        let ipadArray = [] ;
+        const url = "./data.json" //獲得json檔的文字
+
+        // XHR
+        let xhr =new XMLHttpRequest();//XMLHttpRequest()
+        xhr.onload=()=>
+        {
+            console.log(xhr); //印出status 的數 ,避免抓資料失敗
+            if(xhr.readyState == 4 && xhr.status == 200)
+            {
+                ipadArray = JSON.parse(xhr.response);
+                afterResponse();
+            }
+
+            else
+            {
+                console.log('抓取資料失敗');
+                alert('抓取資料失敗');
+            }
+
+            //把回應的資料塞入到iPadArray裡面
+        }
+
+        xhr.open('GET',url);
+        xhr.send();
+        //看回應 network
+        //color選像不會重複 64 256GB 也是
+
+        //現在要用五個按鈕去迭代他
+        //整理各規格用 ,有三個規格
+        let specArray =
+        [
+            { title:'顏色',key:'color',options:[] } , //物件跟物件要用逗號分開
+            { title:'記憶體',key:'storage',options:[] },
+            { title:'網路',key:'network',options:[] },
+        ]
+
+        function afterResponse()
+        {
+            ipadArray.forEach( data =>
+            {
+                /*
+//在specArray裡面三個規格依序取出物件 0 1 2  , 然後每一組進來,看說如果color在的話,就塞入,如果有的話,就不要塞入,避免重複
+                //以下判斷是希望資料不要重複
+                if(!specArray[0].options 
+                    .includes(data['color'])) //是否包含IpadArray裡面的color
+                    {
+                        specArray[0].option.push(data['color']);
+                        //將specArray裡面的option矩陣新增資料
+                    }
+
+                if(!specArray[1].options 
+                    .includes(data['storage']))
+                    {
+                        specArray[0].option.push(data['storage'])
+                    }    
+
+                if(!specArray[2].options 
+                    .includes(data['network']))
+                    {
+                        specArray[0].option.push(data['network'])
+                    }
+                    */
+                   //取specArray裡面的資料
+                   //雙迭代
+                    specArray.forEach(spec=> //spec 是 
+                    {
+                        //原本括弧裡面寫的是data['color'],
+                        let value = data[ spec.key ];
+                        //spec 就是會逐一代表一個
+                        if(spec.options.includes(value))
+                        
+                            spec.options.push(value)
+                            console.log(spec.options)
+                    });
+            });
+
+        console.log(specArray)
+
+            //(二)依據 【規格資料】 造規格的UI
+            //ul > 
+            //  li > h3{規格標題1} + button{選項文字}*n
+            //  li > h3{規格標題2} + button{選項文字}*n
+            //  ...
+
+            ul_specs.innerHTML = "" //先清空
+            specArray.forEach(spec => {
+                let title = spec.title
+                let key = spec.key
+                let options = spec.options
+                // let {title , key , options} = spec
+
+                let li = document.createElement('li')
+                ul_specs.appendChild(li)
+                li.classList.add(`${key}`) //利用class 利於把UI分組
+
+                let h3 = document.createElement('h3')
+                li.appendChild(h3)
+                h3.innerText = title
+
+                //每個選項資料 => 選項按鈕
+                options.forEach(option => 
+                {
+                    let button = document.createElement('button')
+                    li.appendChild(button)
+                    button.innerText = option
+
+                    button.addEventListener('click', () => {
+                        //1. 紀錄"此規格" 選中了 "此選項"
+                        spec.choosed = option
+
+                        // 改樣式：
+                            // 移除同組按鈕的.choosed
+                            // 自己要加.choosed
+                        // let group = document.querySelectorAll(`.${key} button`)
+                        let group = li.querySelectorAll(`button`)
+                        group.forEach( btn => 
+                            btn.classList.remove('choosed') 
+                        ) 
+
+                        button.classList.add('choosed')
+
+                        //2. 刷新圖和錢
+                        refreshImgAndPrice()
+                    })
+                })
+
+                li.append(  document.createElement('hr') )
+            })
+        }
+
+        function refreshImgAndPrice()
+        {
+            let tmp = iPadArray
+            //每個規格 都 有一次篩選
+            specArray.forEach(spec => {
+                tmp = tmp.filter( data => data[ spec.key ] == spec.choosed )
+            })
+
+            // console.log('specArray',specArray) 
+            // console.log('tmp',tmp)
+
+            if(tmp.length != 1) return
+
+            // 目標資料 就是 tmp[0]
+            span_price.innerHTML = tmp[0].price
+            // img_.src = tmp[0].picture  //現在沒圖檔，先以替代文字代替
+            img_.alt = tmp[0].picture
+            
+        }
+        
+    </script>
+
+</body>
+</html>

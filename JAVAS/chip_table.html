@@ -11,9 +11,9 @@
 </head>
 
 <body>
-
+    
     <canvas id="mkShare"></canvas>
-    <table class="table table-bordered table-striped  table-dark" id="chip_table">
+    <table class="table table-bordered table-striped  table-dark " id="chip_table">
 
     </table>
 
@@ -139,12 +139,13 @@
 
         thead = document.createElement('thead');
         tbody = document.createElement('tbody');
-
+        
         window.onload = function () 
         {     
-
+            
             table.append(thead);
             table.append(tbody);
+            table.getAttribute("class:m-3");
             tbody.append();
             drawPieChart();
             createThead();
@@ -171,6 +172,7 @@
 
         function SimpleTbody() 
         {   
+
             Country.forEach((element,index)=>
             {
                 let rank = element.rank;
@@ -188,16 +190,10 @@
                     tbodyTR.append(td);
                 });
                 tbody.append(tbodyTR);
+
             });
 
         }
-
-
-        function createTable()
-        {
-            
-        }   
-
 
     </script>
 
