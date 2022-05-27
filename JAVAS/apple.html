@@ -8,27 +8,96 @@
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Apple</title>
+    <style>
+        img{
+            max-width: 80%;
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/847bfc3e24.js" crossorigin="anonymous"></script>
 </head>
 <body>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-    
     <main>
-        <div class="container">
-            <div class="d-flex justify-content-between">
-                <h2>iPad</h2>
-                <p>金額:$ <span id="total">{1}</span>元</p>
+        <div class="container-fluid  bg-dark"> 
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+                    <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent row "> <!--下拉選單沒有做喔-->
+                            <ul class="navbar-nav w-100 mt-2 mb-2 ">
+                                <li class="nav-item col-1 ">
+                                    <a class="nav-link text-light" href="#"><i class="fa-brands fa-apple"></i></a>
+                                </li>
+                                <li class="nav-item col-1 ">
+                                    <a class="nav-link text-light" href="#">商店</a>
+                                </li>
+                                <li class="nav-item col">
+                                    <a class="nav-link text-light" href="#">Mac</a>
+                                </li>
+                                <li class="nav-item col">
+                                    <a class="nav-link text-light" href="#">iPad</a>
+                                </li>
+                                <li class="nav-item col">
+                                    <a class="nav-link text-light" href="#">iPhone</a>
+                                </li>
+                                <li class="nav-item col">
+                                    <a class="nav-link text-light" href="#">Watch</a>
+                                </li>
+                                <li class="nav-item col">
+                                    <a class="nav-link text-light" href="#">AirPods</a>
+                                </li>
+                                <li class="nav-item col">
+                                    <a class="nav-link text-light" href="#">TV和家庭</a>
+                                </li>
+                                <li class="nav-item col">
+                                    <a class="nav-link text-light" href="#">Apple獨家</a>
+                                </li>
+                                <li class="nav-item col">
+                                    <a class="nav-link text-light" href="#">配件</a>
+                                </li>
+                                <li class="nav-item col">
+                                    <a class="nav-link text-light" href="#">支援服務</a>
+                                </li>
+                                <li class="nav-item col">
+                                    <a class="nav-link " href="#"><i class="fa-solid fa-magnifying-glass text-light"></i></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#"><i class="fa-solid fa-bag-shopping text-light"></i></a>
+                                </li>
+                                
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
             </div>
+        </div>
+
+        <div class="container-fluid  bg-light">
+            <div class="container">
+                <div class="container border-dark border-1">
+                    <div class="d-flex justify-content-between align-items-center ">
+                        <h2>iPad</h2>
+                        <p>金額:$ <span id="total">請先選產品 </span>元</p>
+                    </div>
+                </div>
+            </div>
+        </div>
             <div class="row"><!---手機一欄平板兩欄-->
-                <div class="main-pic col-12 col-md-6 col-md-6">
-                    <img src="" alt="{圖檔路徑}">
+                <div class="main-pic col-12 col-md-6 col-md-6 pl-5">
+                    <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-2021-hero-landing-wifi?wid=900&hei=1046&fmt=jpeg&qlt=90&.v=1630973863000" alt="">
                 </div>
                 <ul class="main-specs col-12 col-md-6"><!---每一組清單ul-->
                     {各組規格}
                 </ul>
             </div>
-        </div>
+        
+    </div>
     </main>
 
     <script>
@@ -38,7 +107,8 @@
         const _img = document.querySelector('.main-pic img');
         const ul_specs = document.querySelector('.main-specs');
         //規格 : specia
-
+        let colorObject=
+        {"太空灰色":"#777777","銀色":"#E8E3DC","玫瑰金色":"#E9D4D1","綠色":"#DAEAD7","天藍色":"#CBCAE0"}
         //全域
         let ipadArray = [] ;
         const url = "./data.json" //獲得json檔的文字
@@ -74,13 +144,14 @@
         [
             { title:'顏色',key:'color',options:[] } , //物件跟物件要用逗號分開
             { title:'記憶體',key:'storage',options:[] },
-            { title:'網路',key:'network',options:[] },
+            { title:'網路',key:'network',options:[] }, 
         ]
 
         function afterResponse()
         {
             ipadArray.forEach( data =>
             {
+                
                 /*
 //在specArray裡面三個規格依序取出物件 0 1 2  , 然後每一組進來,看說如果color在的話,就塞入,如果有的話,就不要塞入,避免重複
                 //以下判斷是希望資料不要重複
@@ -109,15 +180,14 @@
                     {
                         //原本括弧裡面寫的是data['color'],
                         let value = data[ spec.key ];
+
                         //spec 就是會逐一代表一個
-                        if(spec.options.includes(value))
+                        if(!spec.options.includes(value)) spec.options.push(value) //這段就是把ipadArray不重複的丟入
+
+                        console.log(spec)
                         
-                            spec.options.push(value)
-                            console.log(spec.options)
                     });
             });
-
-        console.log(specArray)
 
             //(二)依據 【規格資料】 造規格的UI
             //ul > 
@@ -126,10 +196,12 @@
             //  ...
 
             ul_specs.innerHTML = "" //先清空
-            specArray.forEach(spec => {
+            specArray.forEach(spec => 
+            {
                 let title = spec.title
                 let key = spec.key
                 let options = spec.options
+                
                 // let {title , key , options} = spec
 
                 let li = document.createElement('li')
@@ -144,18 +216,29 @@
                 options.forEach(option => 
                 {
                     let button = document.createElement('button')
+                    let dot_i = document.createElement('i');
+                    let button_p =document.createElement('p');
                     li.appendChild(button)
                     button.innerText = option
-
-                    button.addEventListener('click', () => {
+                    if(key =="color")
+                    {
+                        button.appendChild(dot_i)
+                    }
+                    button.setAttribute("class","btn btn-outline-secondary")
+                    
+                    dot_i.setAttribute("class","fa-solid fa-circle")
+                    
+                    button.addEventListener('click', () => 
+                    {
                         //1. 紀錄"此規格" 選中了 "此選項"
                         spec.choosed = option
-
                         // 改樣式：
                             // 移除同組按鈕的.choosed
                             // 自己要加.choosed
                         // let group = document.querySelectorAll(`.${key} button`)
-                        let group = li.querySelectorAll(`button`)
+                        let group = li.querySelectorAll(`button`);
+                        
+                        //<i class="fa-solid fa-circle"></i>
                         group.forEach( btn => 
                             btn.classList.remove('choosed') 
                         ) 
@@ -166,14 +249,13 @@
                         refreshImgAndPrice()
                     })
                 })
-
                 li.append(  document.createElement('hr') )
             })
         }
 
         function refreshImgAndPrice()
         {
-            let tmp = iPadArray
+            let tmp = ipadArray 
             //每個規格 都 有一次篩選
             specArray.forEach(spec => {
                 tmp = tmp.filter( data => data[ spec.key ] == spec.choosed )
@@ -187,7 +269,8 @@
             // 目標資料 就是 tmp[0]
             span_price.innerHTML = tmp[0].price
             // img_.src = tmp[0].picture  //現在沒圖檔，先以替代文字代替
-            img_.alt = tmp[0].picture
+            //_img.alt = tmp[0].picture
+            _img.setAttribute("src",tmp[0].picture)
             
         }
         
