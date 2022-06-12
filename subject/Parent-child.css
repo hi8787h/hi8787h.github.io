@@ -1,0 +1,220 @@
+.Parent-child-banner-h2
+{
+    width: 90%;
+    margin: auto;  
+    padding-top: 80px;
+    padding-bottom: 30px;
+}
+
+.Parent-child-hotel-banner 
+{
+    background-image: url("https://cdn.kkday.com/pc-web/assets/img/family/family-banner.jpg");
+    max-width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    padding-bottom: 105px;
+
+}
+.Parent-child-banner-p
+{
+    font-size: 1.4rem;
+    font-weight: 300;
+    width: 90%;
+    margin: auto;  
+    margin-bottom: 40px;
+}
+.Parent-child-search
+{
+    width: 90%;
+    margin: auto;  
+}
+
+.google-map 
+{
+    overflow: hidden;
+}
+
+.google-map .map
+{
+    transition: transform 0.5s;
+    max-width: 100%;
+}
+
+.google-map .map:hover 
+{
+    transform: scale(1.1);
+}
+
+.card-p 
+{
+    bottom: 0;
+    z-index: 5;
+    background-color: transparent
+}
+
+.google-map-close
+{
+    background-color: black;
+    z-index: 6;
+    padding: 5px;
+}
+#google-map
+{
+    width: 100%;
+    height: 100%;
+}
+.model-map-dialog
+{
+    z-index: 3;
+}
+
+.google-map-card-button 
+{
+    bottom: 10px;
+    right:10px;
+}
+.Parent-child-main-p
+{
+    font-size: 2.4rem;
+    font-weight: 500;
+}
+@media screen and (max-width:768px)
+{
+    .Parent-child-search
+    {
+        display: none;
+    }
+    .Parent-child-main-p
+    {
+        font-size: 1.8rem;
+    }
+    .Parent-child-hotel-banner 
+    {
+        margin-bottom: 20px;
+    }
+    .Parent-child-class-item
+    {
+        margin: 0;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+
+    .google-mapCard 
+    {
+        display: none;
+    }
+    .Parent-child-type-button
+    {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    .Parent-child-banner-p
+    {
+        font-size: 1.8rem;
+    }
+}
+@media screen and (min-width:768px)
+{
+    .Parent-child-search
+    {
+        display: none;
+    }
+    .Parent-child-class-item
+    {
+        margin: 0;
+        margin-top: 30px;
+        margin-bottom: 15px;
+    }
+
+    .Parent-child-type-button
+    {
+        margin-bottom: 15px;
+    }
+    .Parent-child-search
+    {
+        width: 60%;
+    }
+    .google-mapCard 
+    {
+        display: none;
+    }
+    .Parent-child-hotel-banner 
+    {
+        margin-bottom: 20px;
+    }
+
+    .Parent-child-banner-p
+    {
+        font-size: 1.8rem;
+    }
+}
+
+@media screen and (min-width:992px)
+{
+    .Parent-child-banner-p
+    {
+        width: 55%;
+    }
+    .Parent-child-collapse-search
+    {
+        display: none;
+    }
+    .Parent-child-search
+    {
+        display: block;
+        width: 55%;
+    }
+    .Parent-child-type-button
+    {
+        display: none;
+    }
+    .google-mapCard 
+    {   
+        display: block;
+    }
+    .Parent-child-class-item
+    {
+        margin: 0;
+        margin-top: 45px;
+        margin-bottom: 45px;
+    }
+    .productList
+    {
+        margin-top: 50px;
+    }
+    .model-map-dialog
+    {
+        max-width: 85%;
+    }
+    .google-map-close
+    {
+        top:-15px;
+        right: -15px
+    }
+    .google-map-product-list
+    {
+        max-width: 100%; 
+        height: 810px;
+    }
+    .Parent-child-hotel-banner 
+    {
+        margin-bottom: 40px;
+    }
+    .Parent-child-main-p
+    {
+        margin: 15px;
+    }
+}
+@media screen and(min-width:1200px )
+{
+    .model-map-dialog
+    {
+        max-width: 85%;
+    }
+    .Parent-child-search
+    {
+        width: 55%;
+    }
+
+}   

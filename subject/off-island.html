@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin="" />
+  <title>台灣離島旅遊行程規劃總整理！小琉球水上活動・蘭嶼在地體驗・綠島交通租車</title>
+  <script src="https://kit.fontawesome.com/847bfc3e24.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./reset.css">
+  <link rel="stylesheet" href="./offIsland.css">
+
+</head>
+
+<body>
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  
+  <div class="container-fluid offIsland-hotel-banner">
+    <div class="container p-0 ">
+      <h2 class="offIsland-banner-h2 fs-2 fw-bold text-white text-md-center ">台灣離島旅遊特搜！</h2>
+      <p class="offIsland-banner-p text-white  text-md-center ">輕鬆安排你的離島假期，一次掌握在地獨特體驗、交通接駁！</p>
+      <div class="input-group row  offIsland-search p-1 bg-light rounded">
+        <span
+          class="search-span col-1 bg-white d-flex align-items-center justify-content-center justify-content-md-center rounded-start p-0"><i
+            class="fa-solid fa-magnifying-glass opacity-50"></i></span>
+        <input type="col-8 text p-0" class="form-control border-0" placeholder="搜尋離島活動體驗"
+          aria-label="Recipient's username" aria-describedby="button-addon2">
+        <button class="col-3  col-md-2  btn text-white btn-info  border rounded-end p-0" type="button"
+          id="button-addon2"><i class="fa-solid fa-magnifying-glass search-icon"></i>搜尋</button>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="d-flex offIsland-class-item flex-wrap row justify-content-around p-0 ">
+      <a class="offIsland-item col-4  position-relative  p-0  rounded">
+        <h5 class="fw-bold text-white  position-absolute ">精選優惠</h5>
+        <img
+          src="https://image.kkday.com/v2/image/get/w_208.00000309944153%2Ch_208.00000309944153%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_2119/20220315015659_PBr1K/jpg"
+          class="rounded">
+      </a>
+      <a class="offIsland-item col-4  position-relative  p-0 rounded">
+        <h5 class="fw-bold text-white position-absolute ">蘭嶼</h5>
+        <img
+          src="https://image.kkday.com/v2/image/get/w_208.00000309944153%2Ch_208.00000309944153%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1345/20210415101247_3CDlH/jpg"
+          class="rounded">
+      </a>
+      <a class="offIsland-item col-4  position-relative p-0  rounded">
+        <h5 class="fw-bold text-white position-absolute">小琉球</h5>
+        <img
+          src="https://image.kkday.com/v2/image/get/w_208.00000309944153%2Ch_208.00000309944153%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_863/20191219100708_qK5Nt/jpg"
+          class="rounded">
+      </a>
+      <a class="offIsland-item col-4  position-relative  p-0  rounded">
+        <h5 class="fw-bold text-white position-absolute ">澎湖</h5>
+        <img
+          src="https://image.kkday.com/image/get/w_208.00000309944153%2Ch_208.00000309944153%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_863/20190605100059_5HHUV/jpg"
+          class="rounded">
+      </a>
+      <a class="offIsland-item col-4   position-relative p-0 rounded">
+        <h5 class="fw-bold text-white position-absolute ">綠島</h5>
+        <img
+          src="https://image.kkday.com/v2/image/get/w_208.00000309944153%2Ch_208.00000309944153%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1345/20210426070000_N1plG/jpg"
+          class="rounded">
+      </a>
+      <a class="offIsland-item  col-4  position-relative p-0 rounded">
+        <h5 class="fw-bold text-white position-absolute ">金門&馬祖</h5>
+        <img
+          src="https://image.kkday.com/v2/image/get/w_208.00000309944153%2Ch_208.00000309944153%2Cc_fill%2Cq_55%2Ct_webp/s1.kkday.com/campaign_1345/20210422064143_rlxWg/jpg"
+          class="rounded">
+      </a>
+    </div>
+  </div>
+  <div class="container offIsland-type-button">
+    <div class="d-flex justify-content-left">
+      <button type="button" class="btn btn-outline-secondary rounded-pill p-2 d-flex align-items-center  me-2"><i
+          class="fa-solid fa-sliders ps-2 pe-2"></i><span class="pe-2">更多條件</span></button>
+      <button type="button" class="btn btn-outline-secondary rounded-pill p-2 d-flex align-items-center  me-2"><i
+          class="fa-solid fa-arrow-down-short-wide ps-2 pe-2"></i><span class="pe-2">排序</span></button>
+      <button type="button" data-bs-toggle="modal" data-bs-target="#openModel"
+        class="btn btn-outline-secondary rounded-pill p-2 d-flex align-items-center  me-2"><i
+          class="fa-regular fa-map ps-2 pe-2"></i><span class="pe-2">地圖</span></button>
+    </div>
+  </div>
+  <div class="container productList">
+    <div class="row">
+      <div class="col-lg-3 ">
+        <input type="checkbox" name="" id="menu-control" class="d-none">
+        <div class="google-mapCard">
+          <div class="google-map card d-flex flex-column  mb-2 text collaspe position-relative">
+            <a type="a" data-bs-toggle="modal" data-bs-target="#openModel">
+            <img src="https://cdn.kkday.com/pc-web/assets/img/img_map.jpg" class="map">
+              <img src="https://cdn.kkday.com/pc-web/assets/img/map_marker.svg"
+                class="google-local-mark position-absolute  top-50 start-50 translate-middle ">
+              <div class="card-p position-absolute bg-light bg-opacity-75 w-100 pt-2 pb-2">
+                <p class="text-center ">檢視地圖</p>
+              </div>
+          </a>
+        </div>
+      </div>
+
+      <div class="active-type card p-2">
+        <p>活動類型</p>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            一日遊
+          </label>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            多日遊
+          </label>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            住宿
+          </label>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            美食餐廳
+          </label>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            交通 & 租車
+          </label>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            獨特體驗
+          </label>
+        </div>
+        <div class="form-check mb-3">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            水上活動
+          </label>
+        </div>
+      </div>
+      <div class="Rangebar price_bar p-2 border mt-2">
+        <p>價錢 (TWD)</p>
+        <label for="customRange1" class="form-label">100~18,000</label>
+        <input type="range" class="form-range" id="customRange1">
+      </div>
+    </div>
+    <div class="col col-lg-9">
+      <div class="row  rounded pt-3 border ">
+        <p class="col col-3"><span class="total_journey text-info">21</span>項體驗產品</p>
+        <div class="col col-10 col-lg-9">
+          <ul class="d-flex flex-wrap">
+            <li class="list-unstyled border rounded-pill ">
+              <span>一日遊
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+              </span>
+            </li>
+            <li class="list-unstyled border rounded-pill ">
+              <span>一日遊
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+              </span>
+            </li>
+
+            <li class="list-unstyled border rounded-pill ">
+              <span>一日遊
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+              </span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border_product border rounded row pt-3 d-flex">
+        <p clas="col border-right">排序</p>
+        <a href="" class="border-right col"><i class="fa-solid fa-thumbs-up"></i>KKdays推薦</a>
+        <a href="" class="text-info"><i class="fa-brands fa-gripfire"></i>熱門程度</a>
+        <a href="" class="text-muted"><i class="fa-solid fa-star"></i>用戶評價</a>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="modal fade " id="openModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  model-map-dialog modal-fullscreen-lg-down modal-xl position-relative">
+      <button type="button" class="google-map-close  position-absolute text-light rounded-pill m-auto"
+        data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
+      <div class="modal-content ">
+        <div class="modal-body row  d-flex flex-row-reverse  justify-content-between">
+          <!---卡片-->
+          <div class="overflow-auto  google-map-product-list  col-lg-4 mt-3 mt-lg-0">
+            <div class="card d-flex  flex-row rounded mb-3">
+              <img src="https://picsum.photos/300/200/?random=10" class="rounded-start col-5">
+              <div class="card-body col-7" >
+                <h5 class="card-title mb-2">【2022澎湖花火節】台灣澎湖租機車 | 騎車輕鬆環島遊澎湖</h5>
+                <p class="card-text mb-3">（24/48/72/96小時）</p>
+                <p class="card-text">TWD 358</p>
+                <button type="button" class="btn btn-outline-info position-absolute google-map-card-button">立即訂購</button>
+              </div>
+            </div>
+            <div class="card d-flex  flex-row rounded mb-3">
+              <img src="https://picsum.photos/300/200/?random=10" class="rounded-start col-5">
+              <div class="card-body col-7" >
+                <h5 class="card-title mb-2">【2022澎湖花火節】台灣澎湖租機車 | 騎車輕鬆環島遊澎湖</h5>
+                <p class="card-text mb-3">（24/48/72/96小時）</p>
+                <p class="card-text">TWD 358</p>
+                <button type="button" class="btn btn-outline-info position-absolute google-map-card-button">立即訂購</button>
+              </div>
+            </div>
+            <div class="card d-flex  flex-row rounded mb-3">
+              <img src="https://picsum.photos/300/200/?random=10" class="rounded-start col-5">
+              <div class="card-body col-7" >
+                <h5 class="card-title mb-2">【2022澎湖花火節】台灣澎湖租機車 | 騎車輕鬆環島遊澎湖</h5>
+                <p class="card-text mb-3">（24/48/72/96小時）</p>
+                <p class="card-text">TWD 358</p>
+                <button type="button" class="btn btn-outline-info position-absolute google-map-card-button">立即訂購</button>
+              </div>
+            </div>
+            <div class="card d-flex  flex-row rounded mb-3">
+              <img src="https://picsum.photos/300/200/?random=10" class="rounded-start col-5">
+              <div class="card-body col-7" >
+                <h5 class="card-title mb-2">【2022澎湖花火節】台灣澎湖租機車 | 騎車輕鬆環島遊澎湖</h5>
+                <p class="card-text mb-3">（24/48/72/96小時）</p>
+                <p class="card-text">TWD 358</p>
+                <button type="button" class="btn btn-outline-info position-absolute google-map-card-button">立即訂購</button>
+              </div>
+            </div>
+            <div class="card d-flex  flex-row rounded mb-3">
+              <img src="https://picsum.photos/300/200/?random=10" class="rounded-start col-5">
+              <div class="card-body col-7" >
+                <h5 class="card-title mb-2">【2022澎湖花火節】台灣澎湖租機車 | 騎車輕鬆環島遊澎湖</h5>
+                <p class="card-text mb-3">（24/48/72/96小時）</p>
+                <p class="card-text">TWD 358</p>
+                <button type="button" class="btn btn-outline-info position-absolute google-map-card-button">立即訂購</button>
+              </div>
+            </div>
+            <div class="card d-flex  flex-row rounded mb-3">
+              <img src="https://picsum.photos/300/200/?random=10" class="rounded-start col-5">
+              <div class="card-body col-7" >
+                <h5 class="card-title mb-2">【2022澎湖花火節】台灣澎湖租機車 | 騎車輕鬆環島遊澎湖</h5>
+                <p class="card-text mb-3">（24/48/72/96小時）</p>
+                <p class="card-text">TWD 358</p>
+                <button type="button" class="btn btn-outline-info position-absolute google-map-card-button">立即訂購</button>
+              </div>
+            </div>
+            <div class="card d-flex  flex-row rounded mb-3">
+              <img src="https://picsum.photos/300/200/?random=10" class="rounded-start col-5">
+              <div class="card-body col-7" >
+                <h5 class="card-title mb-2">【2022澎湖花火節】台灣澎湖租機車 | 騎車輕鬆環島遊澎湖</h5>
+                <p class="card-text mb-3">（24/48/72/96小時）</p>
+                <p class="card-text">TWD 358</p>
+                <button type="button" class="btn btn-outline-info position-absolute google-map-card-button">立即訂購</button>
+              </div>
+            </div>
+            <div class="card d-flex  flex-row rounded mb-3">
+              <img src="https://picsum.photos/300/200/?random=10" class="rounded-start col-5">
+              <div class="card-body col-7" >
+                <h5 class="card-title mb-2">【2022澎湖花火節】台灣澎湖租機車 | 騎車輕鬆環島遊澎湖</h5>
+                <p class="card-text mb-3">（24/48/72/96小時）</p>
+                <p class="card-text">TWD 358</p>
+                <button type="button" class="btn btn-outline-info position-absolute google-map-card-button">立即訂購</button>
+              </div>
+            </div>    
+          </div>
+          <!---卡片-->
+          <div class="col-md-8 p-0 google-map-pic">
+            <div id="google-map" class="me-5"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    var map = L.map('google-map').setView([24.93759, 121.2168], 13);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '© OpenStreetMap'
+    }).addTo(map);
+    
+    //圓形圈圈  [北(+)南(-)緯,東(+)西(-)經] ,color  圈圈顏色 , 
+    var circle = L.circle([24.93759, 121.2168],
+      {
+        color: 'red',
+        fillColor: '#f03',
+        fillOpacity: 0.5,
+        radius: 500
+      }).addTo(map);
+
+  </script>
+
+</html>
