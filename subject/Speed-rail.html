@@ -15,14 +15,70 @@
   <script src="https://kit.fontawesome.com/847bfc3e24.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./reset.css">
   <link rel="stylesheet" href="./Speed-rail.css">
+  <link rel="stylesheet" href="./google-map.css">
+  <link rel="stylesheet" href="./All-size.css">
 
 </head>
 
-<body
+<body>
   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-  
-  <div class="container-fluid Speed-rail-hotel-banner">
+  <header class="nav-limit w-100 position-fixed border-bottom border-secondary">
+    <nav class="navbar navbar-expand-lg fixed-width m-auto">
+        <div class="container-fluid px-2 px-md-4">
+            <h1 class="me-4">
+                <a href="#" class="align-top">
+                    <img src="./LOGO.png" alt="Today" class="align-top w-100">
+                </a>
+            </h1>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <!-- <span class="navbar-toggler-icon bg-black">
+                </span> -->
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <!-- 若要開啟搜尋框，將 justify-content-end 改成 justify-content-between，然後搜尋框那行把 d-none 刪除 -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                <div class="input-group w-50 border-secondary border rounded d-none">
+                    <input type="text" class="form-control border-0" placeholder="輸入目的地、景點、體驗行程或活動名稱…" aria-label="Recipient's username" aria-describedby="search">
+                    <button class="btn" type="button" id="search"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <ul class="navbar-nav my-2 my-lg-0">
+                    <!-- 手機 -->
+                    <li class="nav-item d-sm-block d-lg-none m-2">
+                        <a class="nav-link text-secondary text-opacity-75" href="#">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            登入
+                        </a>
+                    </li>
+                    <li class="nav-item d-sm-block d-lg-none border-bottom m-2 pb-3">
+                        <a class="nav-link text-secondary text-opacity-75" href="#">
+                            <i class="fa-solid fa-user"></i>
+                            註冊
+                        </a>
+                    </li>
+                    <li class="nav-item d-sm-block d-lg-none m-2">
+                        <a class="nav-link text-secondary text-opacity-75" href="#">
+                            <i class="fa-regular fa-circle-question"></i>
+                            常見問題與幫助
+                        </a>
+                    </li>
+                    <!-- 筆電 -->
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link text-secondary text-opacity-75" href="#">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item d-none d-lg-block">
+                        <a class="nav-link text-secondary text-opacity-75" href="#">登入/註冊</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+  <div class="Speed-rail-hotel-banner">
     <div class="container p-0 ">
       <h2 class="Speed-rail-banner-h2 fs-2 fw-bold text-white text-md-center ">台灣高鐵國旅聯票</h2>
       <p class="Speed-rail-banner-p text-white  text-md-center ">【台灣高鐵國旅聯票85折】租車・樂園門票及更多高鐵優惠組合，從租車、樂園門票到在地體驗，一指下訂擁有台灣高鐵85折優惠！取票零接觸，高鐵「T-EX行動購票」App直接兌換車票！輕鬆抵達高鐵沿線城市、盡情體驗屬於你的愉快假期</p>
@@ -31,7 +87,7 @@
         <div class="input-group row  m-0"> 
           <div class="btn-group col-12 col-md-5 p-0">
             <button type="button" class="btn btn-light d-flex justify-content-between align-items-center" data-bs-toggle="dropdown" aria-expanded="true">
-              <i class="fa-solid fa-location-dot"></i><span>取車地點</span><span class="fa-solid fa-caret-down opacity-25"></span>
+              <i class="fa-solid fa-location-dot"></i><span>想去哪裡玩?</span><span class="fa-solid fa-caret-down opacity-25"></span>
             </button>
             <ul class="dropdown-menu w-100">
               <li class="col-3 d-inline-block m-2 ">
@@ -92,7 +148,7 @@
           </div>
           <div class="btn-group col-12 col-md-5 p-0">
             <button type="button" class="btn btn-light  d-flex justify-content-between align-items-center">
-              <i class="fa-solid fa-calendar-days pe-2 fw-lighter"><span class="ps-2">取車日期</span></i><span class="pick-car"><input type="date"></span><span class="fa-solid fa-caret-down opacity-25"></span>
+              <i class="fa-solid fa-calendar-days pe-2 fw-lighter"><span class="ps-2">出發時間</span></i><span class="pick-car"><input type="date"></span><span class="fa-solid fa-caret-down opacity-25"></span>
             </button>
           </div>
             <button class="col-12 col-md-2   btn text-white btn-info  border rounded-end " type="button" id="button-addon2"><i class="fa-solid fa-magnifying-glass search-icon"></i>搜尋</button>
@@ -114,7 +170,7 @@
                   id="exampleModalFullscreenLabel">全部清除</a>
           </div>
           <div class="modal-body container">
-              <p class="d-inline-block">取車地點</p>
+              <p class="d-inline-block">你要去哪裡玩?</p>
               <ul class="d-flex justify-content-left flex-wrap">
                   <li class="col-2  col-md-1 d-inline-block m-2 ">
                       <button type="button" class="btn btn-light rounded-pill w-100 text-black-50 p-0">台北</button>
@@ -173,7 +229,7 @@
                       <button type="button" class="btn btn-light rounded-pill w-100 text-black-50 p-0">基隆</button>
                   </li>
               </ul>
-              <p>取車日期</p>
+              <p>日期</p>
               <div class="calendar">
                   <div class="title">
                       <p class="text-info" id="calendar-year">Year</p>
@@ -209,8 +265,8 @@
       </div>
   </div>
   </div> 
-  <div class="container Speed-rail-type-button">
-    <div class="d-flex justify-content-left">
+  <div class="container Speed-rail-type-button-collapse">
+    <div class="d-flex justify-content-left Speed-rail-type-button">
       <button type="button" class="btn btn-outline-secondary rounded-pill p-2 d-flex align-items-center  me-2"><i
           class="fa-solid fa-sliders ps-2 pe-2"></i><span class="pe-2">更多條件</span></button>
       <button type="button" class="btn btn-outline-secondary rounded-pill p-2 d-flex align-items-center  me-2"><i
@@ -219,7 +275,7 @@
         class="btn btn-outline-secondary rounded-pill p-2 d-flex align-items-center  me-2"><i
           class="fa-regular fa-map ps-2 pe-2"></i><span class="pe-2">地圖</span></button>
     </div>
-  </div>rent
+  </div>
   <div class="container productList">
     <div class="row">
       <div class="col-lg-3 ">
@@ -230,7 +286,7 @@
             <img src="https://cdn.kkday.com/pc-web/assets/img/img_map.jpg" class="map">
               <img src="https://cdn.kkday.com/pc-web/assets/img/map_marker.svg"
                 class="google-local-mark position-absolute  top-50 start-50 translate-middle ">
-              <div class="card-p position-absolute bg-light bg-opacity-75 w-100 pt-2 pb-2">
+              <div class="map-card-p position-absolute bg-light bg-opacity-75 w-100 pt-2 pb-2">
                 <p class="text-center ">檢視地圖</p>
               </div>
           </a>
@@ -321,15 +377,14 @@
     </div>
   </div>
   </div>
-
-  <div class="modal fade " id="openModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade " id="openModel" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog  model-map-dialog modal-fullscreen-lg-down modal-xl position-relative">
       <button type="button" class="google-map-close  position-absolute text-light rounded-pill m-auto"
         data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
       <div class="modal-content ">
-        <div class="modal-body row  d-flex d-lg-flex  justify-content-between">
+        <div class="modal-body row  d-flex  justify-content-between">
           <!---卡片-->
-          <div class="overflow-auto  google-map-product-list col-lg-4 mt-3 mt-lg-0">
+          <div class="overflow-auto  google-map-product-list   col-lg-5 col-xl-4 mt-3 mt-lg-0">
             <div class="card d-flex  flex-row rounded mb-3">
               <img src="https://picsum.photos/300/200/?random=10" class="rounded-start col-5">
               <div class="card-body col-7" >
@@ -404,7 +459,7 @@
             </div>    
           </div>
           <!---卡片-->
-          <div class="col-md-8 p-0">
+          <div class="col-lg-7 col-xl-8 p-0 google-map-pic">
             <div id="google-map" class="me-5"></div>
           </div>
         </div>

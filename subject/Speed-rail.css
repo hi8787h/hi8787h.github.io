@@ -1,122 +1,61 @@
 .Speed-rail-banner-h2
 {
-    width: 90%;
-    margin: auto;  
-    padding-top: 80px;
-    padding-bottom: 30px;
+    line-height:1.5;
+    width: 80%;
+    margin: auto;
+    margin-bottom: 0.625rem;
+    font-weight: 700;
 }
 
 .Speed-rail-hotel-banner 
 {
     background-image: url("https://cdn.kkday.com/pc-web/assets/img/thsr/thsr-banner.jpeg");
-    max-width: 100%;
+    height:18.5rem;
+    width: 100%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    padding-bottom: 105px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .Speed-rail-banner-p
 {
-    width: 90%;
+    width: 80%;
     margin: auto;  
-    margin-bottom: 40px;
+    margin-bottom: 0.938rem;
+    line-height: 1.6;
 }
 .Speed-rail-search
 {
-    width: 90%;
+    width: 80%;
     margin: auto;  
 }
-
-.google-map 
+.Speed-rail-type-button
 {
-    overflow: hidden;
+    margin-top: 0.938rem;
+    margin-bottom: 0.938rem;
 }
-
-.google-map .map
+.productList
 {
-    transition: transform 0.5s;
-    max-width: 100%;
+    margin-top: 0.938rem;
 }
-
-.google-map .map:hover 
-{
-    transform: scale(1.1);
-}
-
-.card-p 
-{
-    bottom: 0;
-    z-index: 5;
-    background-color: transparent
-}
-
-.google-map-close
-{
-    background-color: black;
-    z-index: 6;
-    padding: 5px;
-}
-#google-map
-{
-    width: 100%;
-    height: 100%;
-}
-.model-map-dialog
-{
-    z-index: 3;
-}
-
-.google-map-card-button 
-{
-    bottom: 10px;
-    right:10px;
-}
-
 @media screen and (max-width:768px)
 {
     .Speed-rail-search
     {
         display: none;
     }
-
-    .Speed-rail-hotel-banner 
-    {
-        margin: 0px;
-    }
-    .Speed-rail-class-item
-    {
-        margin: 0;
-        margin-top: 30px;
-        margin-bottom: 15px;
-    }
-
     .google-mapCard 
     {
         display: none;
     }
-    .Speed-rail-type-button
-    {
-        margin-top: 20px;
-        margin-bottom: 20px;
-    }
-    
 }
 @media screen and (min-width:768px)
 {
     .Speed-rail-search
     {
         display: none;
-    }
-    .Speed-rail-class-item
-    {
-        margin: 0;
-        margin-top: 30px;
-        margin-bottom: 15px;
-    }
-
-    .Speed-rail-type-button
-    {
-        margin-bottom: 15px;
     }
     .Speed-rail-search
     {
@@ -130,54 +69,22 @@
 
 @media screen and (min-width:992px)
 {
-    .Speed-rail-collapse-search
+    .Speed-rail-collapse-search,.Speed-rail-type-button-collapse
     {
         display: none;
     }
     .Speed-rail-search
     {
         display: block;
-        width: 55%;
-    }
-    .Speed-rail-type-button
-    {
-        display: none;
+        width: 65%;
     }
     .google-mapCard 
     {   
         display: block;
     }
-    .Speed-rail-class-item
-    {
-        margin: 0;
-        margin-top: 45px;
-        margin-bottom: 45px;
-    }
-    .productList
-    {
-        margin-top: 50px;
-    }
-    .model-map-dialog
-    {
-        max-width: 85%;
-    }
-    .google-map-close
-    {
-        top:-15px;
-        right: -15px
-    }
-    .google-map-product-list
-    {
-        max-width: 100%; 
-        height: 810px;
-    }
 }
 @media screen and(min-width:1200px )
 {
-    .model-map-dialog
-    {
-        max-width: 85%;
-    }
     .Speed-rail-search
     {
         width: 55%;

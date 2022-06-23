@@ -15,6 +15,8 @@
   <script src="https://kit.fontawesome.com/847bfc3e24.js" crossorigin="anonymous"></script>
   <link rel="stylesheet" href="./reset.css">
   <link rel="stylesheet" href="./rent.css">
+  <link rel="stylesheet" href="./google-map.css">
+  <link rel="stylesheet" href="./All-size.css">
 
 </head>
 
@@ -22,7 +24,7 @@
   <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js" integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ==" crossorigin=""></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
   
-  <div class="container-fluid rent-hotel-banner">
+  <div class="rent-hotel-banner">
     <div class="container p-0 ">
       <h2 class="rent-banner-h2 fs-2 fw-bold text-white text-md-center ">租車推薦 即刻預訂享折扣・輕鬆享受自駕遊</h2>
       <p class="rent-banner-p text-white  text-md-center ">多元的租車商品與KKday獨家優惠，讓你的自駕遊，安全輕鬆沒煩惱！</p>
@@ -209,8 +211,8 @@
       </div>
   </div>
   </div> 
-  <div class="container rent-type-button">
-    <div class="d-flex justify-content-left">
+  <div class="container rent-type-button-collapse">
+    <div class="d-flex justify-content-left rent-type-button">
       <button type="button" class="btn btn-outline-secondary rounded-pill p-2 d-flex align-items-center  me-2"><i
           class="fa-solid fa-sliders ps-2 pe-2"></i><span class="pe-2">更多條件</span></button>
       <button type="button" class="btn btn-outline-secondary rounded-pill p-2 d-flex align-items-center  me-2"><i
@@ -230,7 +232,7 @@
             <img src="https://cdn.kkday.com/pc-web/assets/img/img_map.jpg" class="map">
               <img src="https://cdn.kkday.com/pc-web/assets/img/map_marker.svg"
                 class="google-local-mark position-absolute  top-50 start-50 translate-middle ">
-              <div class="card-p position-absolute bg-light bg-opacity-75 w-100 pt-2 pb-2">
+              <div class="map-card-p position-absolute bg-light bg-opacity-75 w-100 pt-2 pb-2">
                 <p class="text-center ">檢視地圖</p>
               </div>
           </a>
@@ -327,9 +329,9 @@
       <button type="button" class="google-map-close  position-absolute text-light rounded-pill m-auto"
         data-bs-dismiss="modal" aria-label="Close"><i class="fa-solid fa-x"></i></button>
       <div class="modal-content ">
-        <div class="modal-body row  d-flex d-lg-flex  justify-content-between">
+        <div class="modal-body row  d-flex  justify-content-between">
           <!---卡片-->
-          <div class="overflow-auto  google-map-product-list col-lg-4 mt-3 mt-lg-0">
+          <div class="overflow-auto  google-map-product-list   col-lg-5 col-xl-4 mt-3 mt-lg-0">
             <div class="card d-flex  flex-row rounded mb-3">
               <img src="https://picsum.photos/300/200/?random=10" class="rounded-start col-5">
               <div class="card-body col-7" >
@@ -404,7 +406,7 @@
             </div>    
           </div>
           <!---卡片-->
-          <div class="col-md-8 p-0">
+          <div class="col-lg-7 col-xl-8 p-0 google-map-pic">
             <div id="google-map" class="me-5"></div>
           </div>
         </div>
