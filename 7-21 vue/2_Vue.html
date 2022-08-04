@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+            .d-none
+            {
+                display: none;
+            }
+    </style>
+</head>
+<body>
+    
+    <div id="app">
+        <button v-on:click="change">切換</button>
+        <br>
+        <h1 v-if="isVisiable">BuildSchool</h1>
+        <img v-else src="https://fakeimg.pl/300x200/200">
+        <h2 v-show="isVisiable">Vueeeeeee</h2>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.7/dist/vue.js"></script>
+    <script>
+        /*
+        const btn = document.querySelector('button')
+    const h1 = document.querySelector('h1')
+    const img = document.querySelector('img')
+
+    const isDisplay = true
+    
+    btn.addEventListener('click', () => {
+      isDisplay = !isDisplay
+
+      if (isDisplay) {
+        h1.classList.add('d-none')
+        img.classList.remove('d-none')
+      } else {
+        h1.classList.remove('d-none')
+        img.classList.add('d-none')
+      }
+    })
+    */
+        
+        const app =new Vue({
+        el:'#app',data:
+        {
+            isVisiable :true
+        },
+        methods:{
+            change(){
+                this.isVisiable=!this.isVisiable
+            }
+        }
+        })
+    </script>
+</body>
+</html>

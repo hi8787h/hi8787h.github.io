@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var jsonArray_Num = '[1, 3, 5, 7, 9]'; 
+        var jsonArray_String = '["Mary", "John", “Tom”]'; 
+        var jsonArray_Object = '[{ "firstname": "Mary", "age": 28 ,"city": "New York" }]';
+
+        console.log(jsonArray_Num ,jsonArray_String,jsonArray_Object  )
+        //將JavaScript物件編碼成JSON字串 
+            var jsonText = JSON.stringify(jsonArray_Num); 
+            console.log(jsonText)
+            //將JSON字串解碼成JavaScript物件 
+            var jsObject = JSON.parse(jsonText);
+            console.log(jsObject)
+
+    </script>
+</body>
+</html>

@@ -68,12 +68,7 @@
     color:black;
     text-decoration:none;
 }
-.map-price
-{
-    position: absolute;
-    bottom: 5px;
-    right:5px;
-}
+
 .star
 {
     position: absolute;
@@ -86,9 +81,16 @@
     top:15%;
     right:20%
 }
+
 @media screen and (max-width:768px)
 {
-    .google-mapCard,.leaflet-bar,.google-map-product-list
+    .map-price
+    {
+        position: absolute;
+        bottom: 5px;
+        right:5px;
+    }   
+    .google-mapCard,.google-map-product-list
     {
         display: none;
     }
@@ -109,6 +111,12 @@
 }
 @media screen and (min-width:768px)
 {
+    .map-price
+    {   
+        position: absolute;
+        bottom: 5px;
+        right:5px;
+    }
     .google-local-mark-common
     {
         width: 2rem;
@@ -121,7 +129,7 @@
     {
         font-size: 1rem;
     }
-    .google-mapCard,.leaflet-bar,.google-map-product-list
+    .google-mapCard,.google-map-product-list
     {
         display: none;
     }
@@ -143,6 +151,10 @@
 
 @media screen and (min-width:992px)
 {
+    .map-price
+    {
+        position: relative;
+    }
     .map-common-p{
         font-size: 2rem;
     }

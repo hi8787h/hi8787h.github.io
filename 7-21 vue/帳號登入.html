@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+</head>
+<body>
+  <div id="app" class="container">
+    <div class="row p-5">
+      <div class="col-12 col-md-6 mb-3">
+        <label for="">Account</label>
+        <input
+          v-model="signup.account"
+          type="text"
+          class="form-control"
+          :class="{ 'is-invalid': signupCheck.accountError }"
+        >
+        <div class="text-danger small mt-1">
+          <!-- 錯誤訊息 -->
+          {{ signupCheck.accountErrorMsg }}
+        </div>
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label for="">Password</label>
+        <input
+          v-model="signup.password"
+          type="text"
+          class="form-control"
+          :class="{ 'is-invalid': signupCheck.passwordError }"
+        >
+        <div class="text-danger small mt-1">
+          <!-- 錯誤訊息 -->
+          {{ signupCheck.passwordErrorMsg }}
+        </div>
+      </div>
+      <div class="col-12 col-md-6 mb-3">
+        <label for="">Check Password</label>
+        <input
+          v-model="signup.checkPassword"
+          type="text"
+          class="form-control"
+          :class="{ 'is-invalid': signupCheck.checkPasswordError }"
+        >
+        <div class="text-danger small mt-1">
+          <!-- 錯誤訊息 -->
+          {{ signupCheck.checkPasswordErrorMsg }}
+        </div>
+      </div>
+    </div>
+    <div class="row px-5">
+      <div class="col-4">
+        <button class="btn btn-primary" disabled="disable">送出</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  <!-- Vue -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.7/dist/vue.js"></script>
+  <script>
+    // TODO:
+    // 1. 綁定 v-model 在 input 上 O
+    // 2. 帳號, 密碼, 確認密碼的驗證
+    // 錯誤訊息
+    // 按鈕的驗證狀態
+  </script>
+  <script>
+    const app = new Vue({
+      el: '#app',
+      data: {
+        // 註冊表單資料
+        signup: {
+          account: '',
+          password: '',
+          checkPassword: ''
+        },
+        // 註冊表單驗證相關
+        signupCheck: {
+          accountError: false,
+          accountErrorMsg: '',
+          passwordError: false,
+          passwordErrorMsg: '',
+          checkPasswordError: false,
+          checkPasswordErrorMsg: '',
+        }
+      }
+    })
+  </script>
+</body>
+</html>

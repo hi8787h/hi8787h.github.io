@@ -1,0 +1,66 @@
+Vue 步驟
+1. 加入 script
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.7/dist/vue.js"></script>
+
+2.加入 Vue  (new Vue Instance)
+    <div id="app">
+    </div>
+    <script>
+        const app = new Vue({ 
+            el : '#app',
+            data:{              //data 是加入一個變數
+                isTrue: true    // isTrue 是一個變數 他是bool
+            }
+        })
+    </script>
+
+3. 要在 input 裡面加入 :checked:isTrue
+    <input type="checkbox" :checked:"isTrue">
+
+4. 加入 " 方法 " method 在 Vue 裡面加入
+     <script>
+        const app = new Vue({ 
+            el : '#app',
+            data:{              //data 是加入一個變數
+                isTrue: true    // isTrue 是一個變數 他是bool
+            },
+            method:{
+                change()
+                {
+                    this.isTrue
+                }
+            }
+        })
+    </script>
+
+5. v-if (要是==true時候 , 做... 放在HTML element 裡面時候 代表v-if 是true 的時候才會顯示)
+
+    ex. <img v-if="isTrue" src="圖片"> 
+
+6. 一個p 算出所有 li 的加總 , 
+    先取input value , button 功能,他會把input value 塞入 ul 裡面加入,計算功能,儲存li的Data(innerText)
+
+ex.
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+    </ul>
+    <p></p>
+
+    <script>
+            const app = new Vue({ 
+            el : '#app',
+            data:{              //data 是加入一個變數
+                isTrue: true    // isTrue 是一個變數 他是bool
+            }
+            method:{
+                change()
+                {
+                    this.isTrue
+                }
+            }
+        })
+    </script>
+
+7. 假設 li 多了 50 

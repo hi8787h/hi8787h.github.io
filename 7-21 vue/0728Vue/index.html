@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        
+
+        <!--- v-for 類似  forEach 然後迭代裡面的東西 -->
+    <!---<h1>Hello World Andy</h1>
+        <h1>Hello Wordl Jim</h1>
+        <h1>Hello Wordl Kenvin</h1>-->
+        <!--有要傳東西稻子元件(js)的話 , -->
+        <!-- 傳入的值是  v-bin ":"  -->
+        <app-title v-for="person in persons"
+                    :Name ="person.name"
+                    :Age="person.Age"></app-title> 
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.7/dist/vue.js"></script>
+    <script type="module">  //要import本地端要寫 module
+        import Title from './TitleComponent.js' 
+        const app = new Vue({
+            el:'#app',
+            data:{
+                names:['Andy','Jimmy','Kevin'],
+                firstName:'John',
+                persons:[
+                    {
+                        name: "Age",
+                        Age:12
+                    },
+                    {
+                        name:"dsal;d,l,a[spd",
+                        Age:5545
+                    },
+                    {
+                        name:"asdasd",
+                        Age:654564
+                    }
+                ]
+            },
+            components:{
+                'app-title':Title
+            }
+        })
+    </script>
+</body>
+</html>

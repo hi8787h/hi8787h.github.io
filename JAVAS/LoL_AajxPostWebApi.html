@@ -51,8 +51,10 @@
 
         let xhr = new XMLHttpRequest();
         function xhrPost() {
-            xhr.onload = function () {
-                if (xhr.readyState === 4 && xhr.status === 200) {
+            xhr.onload = function () 
+            {
+                if (xhr.readyState === 4 && xhr.status === 200) 
+                {
                     msg.innerText = xhr.responseText;
                 }
                 else {

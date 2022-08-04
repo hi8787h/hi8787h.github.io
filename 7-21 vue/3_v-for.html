@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul>
+            <li v-for="(item , index) in arr">{{ index }}: {{item}}</li> 
+            
+        </ul>
+        <ul>
+            <li v-for="item in arr2">{{item.name}} : {{item.age}}</li>
+        </ul>
+        <button v-on:click="showAll">show ALL</button> <!--- v-on 類似監聽事件 -->
+        <button v-on:>顯示大於20歲</button>
+        <ul>
+            <li v-for="item in arr3">
+                {{ item.name }} : {{ item.age }}
+            </li>  <!---把塞出的資料放在arr3-->
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.7/dist/vue.js"></script>
+    <script>
+        //上面的 v-for 用了一個值 , 下面的就要去宣告(在methods去宣告) 他
+        const arr=['Apple','Banana','Orange']
+        const arr2=[
+            {name:'Jimmy',age:26},
+            {name:'Andy',age:40},
+            {name:'Calvin',age:24}
+        ]
+
+        const app = new Vue({
+            el:'#app',
+            data:{
+                arr, //名稱一樣可省略
+                arr2,
+                arr3:[]
+            },
+            methods:{
+                showAll()
+                {
+                    this.arr3 = this.arr2
+                },
+                showBigThenTwenty(){
+                    this.arr3 = this.arr2.filter(x=>x.age >=20)
+                }
+            }
+        })
+    </script>
+</body>
+</html>

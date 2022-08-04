@@ -1,0 +1,14 @@
+{
+    "site":
+      ["基隆嶼燈塔", "基隆城市博覽會 基隆之星海上展覽(國門廣場附近)", "桃園戶外休閒體驗營 | OBT 台灣外展 | 高空繩索  X   落羽松露營"]
+    , 
+    "location":
+    {
+      "lat": [25.156652, 25.1319577, 24.8418952]
+      , "lng": [121.7313924, 121.7379821, 121.1881965]
+    }
+    ,"price":
+    [210,100,700]
+    , "mapimgsrc":
+      ["https://www.taiwan.net.tw/att/1/big_scenic_spots/pic_A12-00407_2.jpg", "https://wowlavie-aws.hmgcdn.com/file/article_all/A20220616134753880.jpg", "https://wowlavie-aws.hmgcdn.com/file/article_all/A20220616134753880.jpg"]
+}

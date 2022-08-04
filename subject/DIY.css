@@ -81,11 +81,6 @@
         width: 80%;
         height: 8rem;
     }
-    .DIY-card,.DIY-card-food,.DIY-card-command,.DIY-card-Customization
-    {
-        width: 80%;
-        margin: auto;
-    }
     .rent-type-button
     {
         width: 80%;
@@ -96,7 +91,7 @@
     .DIY-card-h5
     {
         font-size:1rem;
-        bottom:0.8rem;
+        top:calc(100% - 2rem);
         left:0.8rem;
     }
     .rent-search
@@ -120,7 +115,7 @@
     }
     .DIY-card-h5
     {
-        bottom:0.8rem;
+        top:calc(100% - 2rem);
         left:0.8rem;
     }
     .rent-search
@@ -151,8 +146,11 @@
 {
     .DIY-card-h5
     {
-        bottom:40%;
-        left:40%;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 1.3rem;
+        font-weight: 500;
     }
     .owl-theme .owl-item
     {

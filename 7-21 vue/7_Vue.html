@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <label for="">a:</label>
+        <input type="number" v-model="a">
+        <br>
+        <label for="">b:</label>
+        <input type="number" v-model="b">
+        <br>
+        <p>加總: {{ sum }}</p>
+    
+        
+      </div>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.7.7/dist/vue.js"></script>
+      <script>
+        const app = new Vue({
+          el: '#app',
+          data: {
+            a: 0,
+            b: 0
+          },
+          computed: {
+            sum () {
+              return parseInt(this.a) + parseInt(this.b)
+            }
+          }
+        })
+    
+        // const app = new Vue({
+        //   el: '#app',
+        //   data: {
+        //     a: 0,
+        //     b: 0,
+        //     sum: 0
+        //   },
+        //   watch: {
+        //     a: function () {
+        //       this.sum = parseInt(this.a) + parseInt(this.b)
+        //     },
+        //     b: function () {
+        //       this.sum = parseInt(this.a) + parseInt(this.b)
+        //     }
+        //   }
+        // })
+      </script>
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        {{ isTrue }}
+        <input type="checkbox" :checked="isTrue">
+        <button v-on:click="change">切換</button>
+        <br>
+        <img v-if="isTrue" src="https://fakeimg.pl/300x200/200">
+        <br>
+        <input v-model="numInput" type="text"> <!---輸入的值都會儲存在 Vue的 numInput-->
+        <button  v-on:click="confirmBtn">確認</button>
+        <ul>
+            <li v-for="num in numArr">
+                {{ num }}
+            </li>
+        </ul>
+        <p>{{ numTotal }}</p>
+        <p>{{ newNumInput }}</p>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.7/dist/vue.js"></script>
+    <script>
+        const app = new Vue({ 
+            el : '#app',
+            data:{              //data 是加入一個變數
+                isTrue: true,    // isTrue 是一個變數 他是bool
+                numInput:'' ,
+                numArr:[]
+            },
+            methods:{   //方法 類似 按鈕按下都得事件
+                change() //按下按鈕後 true 變成 false , 反之
+                {
+                    // click isTrue ture -> false
+                    // click isTrue false -> true
+                    this.isTrue = !this.isTrue
+                },
+                confirmBtn(){
+                    this.numArr.push(this.numInput)
+                    this.numInput = ''
+                },
+                },
+                // 計算
+                computed:{  //computed 是用來計算在data的東西
+                    numTotal(){
+                        return this.numArr
+                            .reduce((prev,curr)=> prev + parseInt(curr) , 0)   //reduce 對Array的加總 
+                    },
+                    newNumInput(){
+                        return `CHU ${this.numInput / 2 } CHU`
+                    }
+                }
+                  // 監視
+                ,watch:
+                {
+                    // 當 numInput 有變化時, 執行 handler 內的程式碼
+                numInput: {
+                    handler() {
+                    console.log(`${new Date()}: ${this.numInput}`)
+                        }
+                    }
+                }
+        })
+        //watch 與 computed 差異 , 他們都是監聽 , computed 計算 , watch 監視 , 以data而言 有三個東西可以監視 ex. 
+        //watch : { numInput :{handler(){console.log(`${new Data()}: ${this.numInput}`)}}}
+        //用 computed 的話 , 會被動幫你算 , 並且產生新的值  , watch 的話 不會 
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        <input type="text" name="" id="input1">
+        <p id="p1"></p>     
+    -->
+
+
+
+<div id="app">
+        {{ title +  777}}<br>
+        {{number + 22}}
+        {{isTrue}}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.7.7/dist/vue.js"></script>
+    <!---vue-->
+    <script>
+        //前端框架 用js 寫的 
+        //框架:是解決特定情況
+        // React , Angular ,Vue ->前端框架
+        //Vue 漸進式框架  2point : 
+        //1.聲明式渲染 vs 指令式渲染
+        //2.元件系統 ->.netcore : partialView , viewComponent
+        //MVVM -> Model ViewModle-View
+        /*
+        document.querySelector("#input1").addEventListener('input',function(event){
+            document.querySelector("#p1").innerText=event.value.item;
+        })
+        */
+       //聲明式渲染
+       const app = new Vue({
+            // 掛載位址
+            el:'#app',//Vue會找到id 是app的
+            data:{
+                    title:'build school Vue'
+                    ,number :50
+                    ,isTrue:false
+                }
+       })
+       //bootstrap View -Vue 3
+    </script>
+</body>
+</html>

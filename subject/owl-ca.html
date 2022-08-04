@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!--css-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
+    integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
+    crossorigin="" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
+    integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    
+    <title>台灣離島旅遊行程規劃總整理！小琉球水上活動・蘭嶼在地體驗・綠島交通租車</title>
+    <Style>
+      .eeeee{
+        height: 130px;
+        width: 300px;
+      }
+      .yyy
+      {
+        font-size: 12px;
+      }
+    </Style>
+</head>
+
+<body>
+  <template id="MapcardTemplate">
+    <div class="owl-item">
+      <a class="card d-lg-flex  flex-row rounded google-map-product-item  eeeee">
+       <img src="https://truth.bahamut.com.tw/s01/202101/f5135ee59f6166cfefa3c5f7f52376e4.JPG" class="rounded-start col-5">
+       <div class="card-body col-7 p-0 m-2 position-relative">
+            <h5 class="card-title   map-h5 m-0 yyy">【2022澎湖花火節】台灣澎湖租機車 | 騎車輕鬆環島遊澎湖</h5>
+            <div class="star-list display-inline">
+              <i class="fa-solid fa-star map-star"></i>
+              <i class="fa-solid fa-star map-star"></i>
+              <i class="fa-solid fa-star map-star"></i>
+              <i class="fa-solid fa-star map-star"></i>
+              <i class="fa-solid fa-star map-star"></i>
+            </div>
+            <p class="star text-info  m-0"><i class="fa-solid fa-star"></i> <span class="star-amount">4.75</span></p>
+            <p class="card-text map-price m-0">TWD 358</p>
+            <button type="button"
+              class="btn btn-outline-info position-absolute google-map-card-button">立即訂購
+            </button>
+       </div>
+      </a> 
+    </div>
+</template>
+
+<div class=" owl-carousel e owl-loaded owl-drag h-25">
+  <div class="owl-stage-outer">
+    <div class="owl-stage google-map-product-list">
+
+    </div>
+  </div>
+</div>
+
+  
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+  crossorigin="anonymous"></script>
+
+  <!--需要的js-->
+  <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
+    integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
+    crossorigin=""></script>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!---->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <script src="https://kit.fontawesome.com/847bfc3e24.js" crossorigin="anonymous"></script>
+  <script>
+
+    let json_Name = [
+    {ProductId: 1, ProductName: '新竹關西六福莊生態度假旅館｜雙樂園｜贈送六福村＋Xpark '},
+    {ProductId: 2, ProductName: '桃園防疫旅館｜桃禧航空城大飯店｜一泊三食｜居家檢疫專案'},
+    {ProductId: 3, ProductName: '【KKday限時快閃29折】雲林劍湖山渡假大飯店｜住宿贈送遊樂園'},
+    {ProductId: 4, ProductName: '台北防疫旅館｜享樂文旅開封館｜一泊三食｜8 晚居家檢疫專案'}
+    ]
+    let map_product_list = document.querySelector(".google-map-product-list");
+    let MapcardTemplate = document.querySelector("#MapcardTemplate");
+
+
+       function createCard(index)  //創造卡片
+       {
+           let cloneContent = MapcardTemplate.content.cloneNode(true);
+           //let cloneContentPhone = MapcardTemplatePhone.content.cloneNode(true);
+           cloneContent.querySelector('h5').innerText = json_Name[index].ProductName;
+           //cloneContent.querySelector('img').src = json_photo[index].PhotoPath;
+           // cloneContent.querySelector('.map-price').innerText = `TWD ${site_location.price[index]}`;
+           map_product_list.append(cloneContent);
+
+       }
+      
+       for(let i=0;i<json_Name.length;i++)
+       {
+          createCard(i);
+       }
+
+       $(".owl-carousel.e").owlCarousel
+    ({
+      loop: false,
+      margin: 20,
+      stagePadding: 32,
+      responsive:
+      {
+        0: {
+          items: 1
+        },
+        450: {
+          items: 2
+        },
+      }
+});
+  </script>
+</body>
+  
+
+
+
+</html>
