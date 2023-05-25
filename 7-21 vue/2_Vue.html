@@ -24,6 +24,9 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.7/dist/vue.js"></script>
     <script>
         /*
+        //v-if用來控制元素要不要render出來
+        //v-else一定是依附在v-if的元素之後，不能在中間穿插別的東西，如果不是連在一起的話就會失效。
+       // v-show可以與v-if作對照，模式是一樣的，true出現、false就不出現，差別在於 v-show會render出元素，只是用css display來操縱他看不看的到。
         const btn = document.querySelector('button')
     const h1 = document.querySelector('h1')
     const img = document.querySelector('img')
