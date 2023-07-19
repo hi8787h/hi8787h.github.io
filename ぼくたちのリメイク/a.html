@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>MF文庫J『ぼくたちのリメイク』特設サイト</title>
+    <meta name="viewport" content="width=1300">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <title>Document</title>
+    <style>
+        :root{
+
+            --bs-font-sans-serif :"メイリオ", "Meiryo", "游ゴシック", "Yu Gothic", YuGothic, "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", sans-serif;
+        }
+        html{
+            font-family: var(--bs-font-sans-serif)
+        }
+        h1{
+            font-size: 0;
+        }
+        .d-none {
+            display: none;
+        }
+        header{
+            height: 48px;
+            width: 100%;
+            position: fixed;
+            z-index: 10;
+        }
+        .navbar_boku{
+            height: 48px;
+            font-size: 0;
+            background-color: rgb(92, 80, 80);
+            border-top: 5px solid rgb(108,96,96);
+            border-bottom: 5px solid rgb(108,96,96);
+            box-sizing: border-box;
+            -webkit-box-shadow: 0px 2px 1px -1px #4c4040;
+            display: flex;  
+            justify-content: center;
+        }
+        .navbar_boku>ul{
+            box-sizing: border-box;
+            width: 1200px;
+        }
+        .nav_li>a{
+            height: 100%;
+            background-repeat: no-repeat;
+            display: block;
+            filter: grayscale(100%);
+            background-position: 50% 50%;
+            background-size: 90%;
+            margin-right: 27px;
+        }
+        .nav_li:nth-of-type(1)>a{
+            width: 280px;
+            background-image: url(main_logo.png);
+            background-position: 50% 80%;
+            background-size: 50%;
+        }
+        .nav_li:nth-of-type(2)>a{
+            width: 93px;
+            background-image: url(column.png);
+        }
+        .nav_li:nth-of-type(3)>a{
+            width: 80px;
+            background-image: url(story.png);
+        }
+        .nav_li:nth-of-type(4)>a{
+            width: 125px;
+            background-image: url(character.png);
+        }
+        .nav_li:nth-of-type(5)>a{
+            width: 131px;
+            background-image: url(shop\ bonus.png);
+        }
+        .nav_li:nth-of-type(6)>a{
+            width: 81px;
+            background-image: url(books.png);
+        }
+        .nav_li:nth-of-type(7)>a{
+            width: 95px;
+            background-image: url(special.png);
+        }
+        .nav_li:nth-of-type(8)>a{
+            width: 28px;
+            background-image: url(twitter.png);
+        }
+        .nav_li:nth-of-type(9)>a{
+            width: 92px;
+            background-image: url(MJ.png);
+        }
+        .nav_li>a:hover{
+            transition-duration: 0.3s;
+            filter: grayscale(0%);
+        }
+        .nav_li{
+            list-style: none;
+        }
+        main{
+            padding-top: 48px;
+        }
+        main>section:nth-of-type(1)
+        {
+            background-image: url(cloudbg.png),url(cloudbg2.png);
+            background-repeat: no-repeat, repeat-x;
+            background-size: 1600px 1032px, 24px 1032px;
+            background-position: center top, left top;
+            border-bottom: 1px solid #e9e3e3;
+        }
+        .main_bg_in
+        {
+            height: 1000px;
+            margin: auto;
+            width: 1200px;
+        }
+        .mainbg_img{
+            width: 948px;
+            height: 920px;
+            top: 10px;
+            left: 145px;
+        }
+        .sitika{
+            width: 172px;
+            height: 172px;
+            top: 58px;
+            left: 162px;
+            z-index: 5;
+        }
+        .sitika2{
+            width: 286px;
+            height: 383px;
+            top: 203px;
+            left: 119px;
+        }
+        .sitika3{
+            width: 177px;
+            height: 111px;
+            top: 60px;
+            left: 740px;
+        }
+        .sitika4{
+            width: 86px;
+            height: 589px;
+            top: 59px;
+            left: 994px;
+        }
+        .sitika5{
+            width: 96px;
+            height: 238px;
+            top: 367px;
+            left: 494px;
+        }
+        .sitika6{
+            width: 293px;
+            height: 290px;
+            top: 597px;
+            left: 134px;
+        }
+        .sitika7{
+            width: 837px;
+            height: 193px;
+            top: 824px;
+            left: 181px;
+        }
+        .sitika8{
+            width: 169px;
+            height: 169px;
+            top: 515px;
+            left: 810px;
+        }
+        .sitika9{
+            width: 169px;
+            height: 169px;
+            top: 604px;
+            left: 631px;
+        }
+        .sitika10{
+            width: 120px;
+            height: 120px;
+            top: 702px;
+            left: 812px;
+        }
+        .sitika11{
+            width: 120px;
+            height: 120px;
+            top: 670px;
+            left: 949px;
+        }
+        
+        main>section:nth-of-type(2)
+        {
+            border-bottom: 1px solid #e9e3e3;
+            background-image: url(columnbg.png);
+            overflow: hidden;
+        }
+        .column
+        {
+            width:1200px;
+            margin: auto;
+        }
+        .column>h2
+        {
+            font-size: 0px;
+            background-image: url(columnh2.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 212px;
+            height: 70px;
+            margin: 59px auto 0;
+            padding: 0;
+        }
+        .column>p{
+            margin: 48px 0 0 0;
+            padding: 0;
+            text-align: center;
+            color: #5c5050;
+            line-height: 1;
+            font-size: 17px;
+            font-weight: 700;
+            text-align: center;
+            counter-reset: column-no;
+        }
+        .yugo{
+            font-family: "游ゴシック", "Yu Gothic", YuGothic, "メイリオ", "Meiryo", sans-serif;
+        }
+        .column_intro{
+            position: relative;
+            padding: 47px;
+            margin: 48px;
+            display: flex;
+            
+            border-top: 2px solid #442222;
+            font-family: "メイリオ", "Meiryo", "游ゴシック", "Yu Gothic", YuGothic, "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", sans-serif;
+        }
+        .column_intro:before{
+            counter-increment: column-no;
+            content: "第" counter(column-no) "回";
+            width: 90px;
+            height: 30px;
+            color: #ffcc33;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 30px;
+            text-align: center;
+            border-radius: 6px;
+            background-color: #000;
+            position: absolute;
+            top: -15px;
+            left: 30px;
+        }
+        .column_intro h3{
+            color: #ee0055;
+            line-height: 1;
+            text-align: center;
+        }
+        .column_intro>article>h3+p{
+            font-size: 14px;
+            font-weight: 700;
+            text-align: center;
+            margin: 0 0 0 0;
+            padding: 0 0 0 0;
+            line-height: 1;
+        }
+        .column_intro>article>h3::after{
+            content:"先生";
+            color:#442222;
+        }
+        .column_intro>article{
+            width: 50%;
+        }
+        .column_intro>article:nth-of-type(1){
+            margin-right: 45px;
+            
+        }
+        .column_intro>article + article
+        {
+            margin-left: 45px;
+        }
+        .column_intro>article>hr{
+            border: none;
+            margin: 24px 0 23px 0;
+            padding: 0;
+            height: 1px;
+            width: 100%;
+            background-color: #ccc0c0;
+        }
+        .column_intro>article>hr+p{
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 28px;
+            text-align: justify;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+        }
+        main>section:nth-of-type(3){
+            overflow: hidden;
+            background-image: url(stroybg.png);
+            border-bottom: 1px solid #e9e3e3;
+        }
+        .story
+        {
+            margin: 59px auto 0;
+        }
+        .story>h2{
+            background-image: url(storyh2.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 166px;
+            height: 43px;
+            font-size: 0;
+            margin: auto;
+        }
+        .story>p{
+            width: 39.5%;
+            text-align: center;
+            margin: auto;
+            margin-top: 40px;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 28px;
+            margin-bottom: 50px;
+        }
+        .story_intro2
+        {
+            font-size: 45px;
+            font-weight: 400;
+            line-height: 54px;
+            padding: 0;
+            width: 100%;
+            margin: 48px auto 0;
+            text-align: center;
+        }
+        .story_intro2>strong>span{
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <header>
+            <nav class="navbar_boku">
+                <ul class=" h-100 p-0 m-0 d-flex justify-content-center">
+                    <li class="nav_li">
+                        <a href="#" ><h1>ぼくたちのリメイク</h1></a>
+                    </li>
+                    <li class="nav_li  ps-2 ">
+                        <a href="#" >COLUMN</a>
+                    </li>
+                    <li class="nav_li  ps-2 ">
+                        <a href="#">STORY</a>
+                    </li>
+                    <li class="nav_li  ps-2 ">
+                        <a href="#">CHARACTER</a>
+                    </li>
+                    <li class="nav_li  ps-2 ">
+                        <a href="#">SHOP BOUNS</a>
+                    </li>
+                    <li class="nav_li  ps-2 ">
+                        <a href="#">BOOKS</a>
+                    </li>
+                    <li class="nav_li  ps-2 ">
+                        <a href="#">SPECIAL</a>
+                    </li>
+                    <li class="nav_li  ps-2 ">
+                        <a href="#">TWITTER</a>
+                    </li>
+                    <li class="nav_li  ps-2 ">
+                        <a href="#">MJ 文庫</a>
+                    </li>
+                </ul>
+            </nav>      
+        </header>
+        <main class="w-100">
+            <section>
+                <div class="main_bg_in position-relative"> 
+                    <div class="mainbg_img position-absolute">
+                        <img src="mainbg.png" alt="" class="w-100 ">
+                    </div>
+                    <div class="sitika position-absolute">
+                        <img src="sitika1.png" alt="" class="w-100">
+                    </div>
+                    <div class="sitika2 position-absolute">
+                        <img src="sitika2.png" alt="" class="w-100">
+                    </div>
+                    <div class="sitika3 position-absolute">
+                        <img src="sitika3.png" alt="" class="w-100">
+                    </div>
+                    <div class="sitika4 position-absolute">
+                        <img src="sitika4.png" alt="" class="w-100">
+                    </div>
+                    <div class="sitika5 position-absolute">
+                        <img src="sitika5.png" alt="" class="w-100">
+                    </div>
+                    <div class="sitika6 position-absolute">
+                        <img src="sitika6.png" alt="" class="w-100">
+                    </div>
+                    <div class="sitika7 position-absolute">
+                        <img src="sitika7.png" alt="" class="w-100">
+                    </div>
+                    <div class="sitika8 position-absolute">
+                        <a href="https://www.amazon.co.jp/dp/4046825499?ref_=cm_sw_r_cp_ud_dp_F6RZ76173F9X61QZSD4E_1" title="ぼくたちのリメイク えれっとアートワークス" >
+                            <img src="sitika8.png" alt="" class="w-100 ">
+                        </a>
+                    </div>
+                    <div class="sitika9 position-absolute">
+                        <a href="http://bokurema.com/" title="アニメ「ぼくたちのリメイク」" target="_blank">
+                            <img src="sitika9.png" alt="" class="w-100">
+                        </a>
+                    </div>
+                    <div class="sitika10 position-absolute">
+                        <a href="https://listengo.dwango.jp/page/audiobook-remake/" title="アニメ「ぼくたちのリメイク」" target="_blank">
+                            <img src="sitika10.png" alt="" class="w-100 ">
+                        </a>
+                    </div>
+                    <div class="sitika11 position-absolute">
+                        <a href="https://pocket.shonenmagazine.com/episode/10834108156679858281" title="水曜日のシリウス" target="_blank">
+                            <img src="sitika11.png" alt="" class="w-100">
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <section class="w-100">
+                <div class="column">
+                    <h2>あの頃の僕は</h2>
+                    <p class="yugo">＼ 著名な方々に作品の舞台となる２００６年頃を振り返っていただきました！ ／</p>
+                    <div class="column_intro">
+                        <article>
+                            <h3 class="yugo">いとうのいぢ</h3>
+                            <p class="yugo">代表作『涼宮ハルヒの憂鬱』ほか</p>
+                            <hr>
+                            <p>２００６年というのは私にとってどういう年だったのか。記憶を想い起こすために当時の年号のふられた仕事のフォルダを開いてみると、今の倍以上の仕事をしてたことがうかがえた。ハルヒやシャナといった、自分にとって大きな転機をくれた作品たちの名前のフォルダがズラリと並ぶ。今振り返ると幸運が重なり自分をつくりあげてくれたんだなあとしみじみと思ってしまったのでした。忙しく時間との戦いで、期日に間に合わせるために悔しい思いで提出した絵もあるけれど、それも込みでやっていて良かったと思える今日この頃。すぐ仕事なんてなくなるだろうから、いただけるうちは頑張ろうと走ってきたのが、意外にもまだ頑張れている今の私です。</p>
+                        </article>
+                        <article>
+                            <h3 class="yugo">渡辺明夫</h3>
+                            <p class="yugo">代表作『グリザイアの果実』ほか</p>
+                            <hr>
+                            <p>２００６年。
+                                　ちょうど、ジブリール２とかToHeart２とかのオープニングをやってた後くらいで、ＴＶアニメから離れてゲームのオープニングとかを主に手伝っていた時期ですね。ＣＣさくらにハマってたような気がします。その頃は、アニメの現場にくじけて、アニメ会社を離れていた時期という感じですね。でも、考え方とか、やってることは、今とあんまり変わってないような気がします。
+                                　ちょうどその頃は、化物語のアニメも着手する前の時期でしたね。いつも私は、最近自分の腕が落ちたかなと思う頃に、アニメの現場にドップリと関わって、散々苦労してから懲りて離れて、でもまた数年したら新しい現場に入って、自分を叩き直すみたいなことを何度も繰り返しているような気がします。
+                                　それなので、自分の場合は１０年前を思い描いても、あんまりノスタルジーというのとはちょっと違っているのかも知れません。
+                                　また１０年後も同じようにできているといいですね。</p>
+                        </article>
+                    </div>
+                    <div class="column_intro">
+                        <article>
+                            <h3 class="yugo">丸戸史明</h3>
+                            <p class="yugo">代表作『冴えない彼女の育てかた』ほか</p>
+                            <hr>
+                            <p>２００６年といえば、ちょうど１２月に『フォセット』というPCゲームを出しまして、そのシナリオに木緒なちという一流ライターを招聘して……というネタにしたいと相談したら木緒さんに却下食らいましたんで別の話で。
+                                　この年の４月、僕は今までのシナリオライターとしてのキャリアや蓄えを全部使い果たすつもりで、ずっとやってみたかった『ボリュームも内容も何もかも自分のやりたい放題』なゲームの企画書を書いてました。まぁその企画書の執筆期間は一日でしたけど。でもあまりにも好き放題し過ぎたせいで、その企画が完全に世に出るまでに５年以上かかったのはご愛嬌というところでしょうか。本当、完成してよかった。クライアントの社長には『あんたサグラダファミリア作ってんのか！』って怒られたしなぁ。</p>
+                        </article>
+                        <article>
+                            <h3 class="yugo">三上延</h3>
+                            <p class="yugo">代表作『ビブリア古書堂の事件手帖』ほか</p>
+                            <hr>
+                            <p>２００６年は小説家としてデビューから四年目。中央線沿線の古い木造アパートでライトノベルのシリーズものをひたすら書いていた。忙しくなると食事や睡眠の時間は不規則になり、家事も投げやりになっていく。仕事に集中するために昼間も部屋を暗くして、食料の買い出し以外はほとんど部屋を出なかった。
+                                　当時のライトノベル業界は今よりずっと景気がよかった。他のジャンルより出版サイクルは短いとされていたものの、メディアミックスに縁のない中堅作家でもそれなりに生活はできていた。
+                                　周りでは同輩や後輩の小説家が同じレーベルで次々にヒットを飛ばしていた。この暗い部屋で俺は何をしているんだろうと自問することもあったが、長い時間は悩まなかった。何をしているんだろうも何も小説を書いているのだ。もう締め切りは過ぎている。とにかく書き上げないと死ぬ。書き上げるまで死ねない。苦しく楽しい、充実していて空しい、歓びと焦りで脳が焼き切れそうな毎日。
+                                　今も別に変わらない。</p>
+                        </article>
+                    </div>
+                    <div class="column_intro">
+                        <article>
+                            <h3 class="yugo">溝口ケージ</h3>
+                            <p class="yugo">代表作『さくら荘のペットな彼女』ほか</p>
+                            <hr>
+                            <p>２００６年。あれはちょうど商業作品でデビューをした年になります。ネットでラクガキを上げ、たまに同人誌を出していただけの時分にいきなりラノベ。しかも締切が直近で、カラー４枚、モノクロ１０枚をひと月で描くなんて無理！　と、当時は泣き言を言っていましたが、２４冊も仕事した今でも毎回泣き言を言っています。
+                                　自分以外で言うと、当時よく僕の家に泊まりに来ていたえれっとさんが、確か我が家で６月くらいラクガキしたのがあの”ちゅるやさん”でした。それはもう凄い反響で、マネージメントというとおこがましいですが、僕も作品作り以外の部分で、えれっとさんを少々お手伝いをしたのを覚えています。作品が売れる、ということはどういうことなのか。ものづくりの上である意味最も大事なことを、若いうちに学べたのは大変な幸運でした。
+                                　あの頃があってこその今の自分だと、つくづく思う日々です。
+                                　末筆ではありますが、万が一僕が１０年前にリメイクされた場合、ちゅるやさんはえれっとさんに先んじて僕の作品となっていることだろう、というこの言葉をもってコラムの方を締めさせていただきたいと思います。</p>
+                        </article>
+                        <article>
+                            <h3 class="yugo">MIN-NARAKEN</h3>
+                            <p class="yugo">代表作『鬼畜王ランス』ほか</p>
+                            <hr>
+                            <p>２００６年。もう１０年も前になるのですね。
+                                　私は、今もその頃も…とあるゲームソフトメーカーの絵描きをやってました。
+                                　今がそうじゃない、という訳では無いですが、ゲーム業界的には元気のある時代だった気がします。
+                                　忙しさは今も変わりませんが、当時は結構家に帰ってからもゲーム三昧な日々で、飯を食ったらゲーム機やらＰＣをＯＮにしてましたね。でもきっちり睡眠は取るという規律正しい生活（？）でした。
+                                　でも、今思えば疲れ知らずに何にしても没頭できたあの頃に、趣味に走った事やら何やら…
+                                　もっと諸々しておけば良かったな、とやはり思いますね。</p>
+                        </article>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="story w-100">
+                    <h2>ストーリー</h2>
+                    <p>僕、橋場恭也は売れないゲームディレクター。<br>
+                        会社は倒産、企画もとん挫して実家に帰ることになる。<br>
+                        輝かしいクリエイターの活躍を横目にふて寝して目覚めると、<br>
+                        なぜか十年前の大学入学時に巻き戻っていた！？<br>
+                        落ちたはずの大学に受かっていて憧れの芸大ライフ、<br>
+                        さらにはシェアハウスで男女四人の共同生活と突如、バラ色の毎日に！<br>
+                        ここから僕の人生を作り直すんだ———<br>
+                        後の超有名クリエイター（の卵）と共に送る新生活がいま始まる！<br>
+                        と、意気揚々と始めてみたもののそんなにうまくはいかないみたいで……。</p>
+                </div>
+                <p class="story_intro2"><strong>木緒なち<span class="font-weight-lighter">×</span>えれっと</strong>の超強力タッグによる、<br>
+                    青春リメイクストーリー！</p>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.7/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+   
+
+</body>
+
+</html>
